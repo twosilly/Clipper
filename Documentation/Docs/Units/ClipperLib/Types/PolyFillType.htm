@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+  <script type="text/javascript" src="../../../../Scripts/jquery.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shCore.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shBrushDelphi.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shBrushCpp.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shBrushCSharp.js">
+  </script>
+    
+  <link type="text/css" rel="stylesheet" href="../../../../Scripts/SyntaxHighlighter/styles/shCoreDefault.css">
+    
+  <link type="text/css" rel="stylesheet" href="../../../../Scripts/SyntaxHighlighter/styles/shThemeDefault.css">
+  
+
+  <title>PolyFillType</title>
+
+  <link rel="stylesheet" href="../../../../Styles/default.css" type="text/css">
+
+    
+  <script type="text/javascript" src="../../../../Scripts/bootstrap.js">
+  </script>
+  
+</head>
+
+<body bgcolor="#FFFFFF">
+    
+  <!-- THIS FILE HAS BEEN AUTOMATICALLY PROCESSED FROM A SOURCE COPY -->
+    
+  <!-- DO NOT EDIT MANUALLY !!! -->
+  
+  <table class="Banner" cellspacing="0" cellpadding="0" border="1" bordercolorlight="#303080" bordercolordark="#7070B0">
+    <tr>
+      <td class="Banner" nowrap=""><a href="../../../_Body.htm" class="Banner"><img src="../../../../Images/_Home.gif" align="absmiddle">Home</a>
+      </td>
+      <td class="Banner" nowrap=""><a href="../_Body.htm" class="Banner"><img src="../../../../Images/_Unit.gif" align="absmiddle">ClipperLib</a>
+      </td>
+      <td class="Banner" width="100%" align="right"><img src="../../../../Images/_Project_Logo.gif" align="absmiddle">
+      </td>
+    </tr>
+  </table>
+  <h1>PolyFillType（多边形填充类型）</h1>
+
+
+  <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>type</b> TPolyFillType = (pftEvenOdd, pftNonZero, pftPositive, pftNegative);</p>
+
+  <p class="Decl2"><span class="Comment">C++&nbsp;&raquo;</span> <b>enum</b> PolyFillType {pftEvenOdd, pftNonZero, pftPositive, pftNegative};</p>
+
+  <p class="Decl3"><span class="Comment">C#&nbsp;&nbsp;&raquo;</span> <b>public enum</b> PolyFillType {pftEvenOdd, pftNonZero, pftPositive, pftNegative};</p>
+<br>
+
+
+  <p class="Body"> <em>Filling</em> indicates those regions that are <em>inside</em> a closed path (ie 'filled' with a brush color or pattern in a graphical display) and those regions that are <em>outside</em>. The Clipper Library supports 4 filling rules: Even-Odd, Non-Zero, Positive and Negative.<br>
+<p class="Body"><em>填充</em>表示<em>在</em>封闭路径<em>内</em>的那些区域（即，在图形显示中用画笔颜色或图案填充的）和在<em>外部的</em>那些区域。Clipper 库支持4种填充规则：偶数，非零，正和负。  
+  <p class="Body"><br> 
+  The simplest filling rule is <em>Even-Odd</em> filling (sometimes called <em>alternate</em> filling). Given a group of closed paths start from a point outside the paths and progress along an imaginary line through the paths. When the first path is crossed the encountered region is filled. When the next path is crossed the encountered region is <em>not</em> filled. Likewise, each time a path is crossed, filling starts if it had stopped and stops if it had started.  
+  <p class="Body">
+  <p class="Body">最简单的填充规则是<em>偶数</em>填充（有时称为<em>交替</em>填充）。给定一组闭合路径从路径外的点开始并沿着通过路径的假想线前进。当第一路径交叉时，遇到的区域被填充。当下一个路径交叉时，遇到的区域<em>不</em>填充。同样，每次跨越一条路径时，如果已经停止则填充开始，如果已经开始则停止。<br>
+  <br> With the exception of <em>Even-Odd</em> filling, all other filling rules rely on <b>edge direction</b> and <b>winding numbers</b> to determine filling. Edge direction is determined by the order in which vertices are declared when constructing a path. Edge direction is used to determine the <b>winding number</b> of each polygon subregion.<br>  
+  <p class="Body">除了<em>偶数</em>填充之外，所有其它填充规则依赖于<strong>边缘方向</strong>和<strong>缠绕数</strong>来确定填充。边缘方向由构建路径时声明顶点的顺序确定。边缘的方向为用于确定<strong>绕数</strong>每个多边形分区域。    
+  <p class="Body"><br> 
+  <img src="../../../../Images/wn.png" alt="" width="16" height="16" border="0" align="absmiddle"> The winding number for each polygon sub-region can be derived by:     
+  <ol>
+	
+<li>starting with a winding number of zero and</li>
+	
+      <li>from a point (P1) that's outside all polygons, draw an imaginary line to a point that's inside a given sub-region (P2)</li>
+	
+      <li>while traversing the line from P1 to P2, for each path that crosses the imaginary line from right to left increment the winding number, and for each path that crosses the line from left to right decrement the winding number.</li>
+
+      <li>Once you arrive at the given sub-region you have its winding number.</li>
+
+    </ol> </p>
+
+  <blockquote>
+    <p><br>
+      <img src="../../../../Images/wn.png" alt="" width="16" height="16" border="0" align="absmiddle">每个多边形子区域的匝数可以通过以下导出：<strong>边缘的方向为用于确定绕数</strong>每个多边形分区域。每个多边形子区域的匝数可以通过以下导出：<strong>边缘的方向为用于确定绕数</strong>每个多边形分区域。每个多边形子区域的匝数可以通过以下导出：</p>
+      <ol>
+        <li>从绕组数为零开始</li>
+        <li>从在所有多边形外部的点（P1），绘制一条假想线到在给定子区域（P2）内的点，</li>
+        <li>当从P1到P2穿过线时，对于从右到左穿过虚线的每个路径增加绕组数，并且对于从左到右穿过线的每个路径减小绕组数。</li>
+        <li>一旦你到达给定的子区域，你有它的匝数。</li>
+      </ol>
+</blockquote>
+<p>&nbsp;</p>
+<p class="Body"> <img src="../../../../Images/winding_number.png" alt="" width="720" height="250" border="0"><br> <b>Even-Odd (Alternate)</b>: Odd numbered sub-regions are filled, while even numbered sub-regions are not.<br> <b>Non-Zero (Winding)</b>: All non-zero sub-regions are filled.<br> <b>Positive</b>: All sub-regions with winding counts &gt; 0 are filled.<br> <b>Negative</b>: All sub-regions with winding counts &lt; 0 are filled.<br></p>
+<p class="Body"><strong>奇偶（偶数）</strong>：奇数子区域被填充，而偶数子区域不被填充。<br>
+  <strong>非零（绕组）</strong>：填充所有非零子区域。<br>
+  <strong>正</strong>：填充所有具有绕组计数&gt; 0的子区域。<br>
+<strong>负</strong>：填充所有具有绕组计数&lt;0的子区域。</p>
+<p class="Body"><br> 
+  Paths are added to a Clipper object using the <a href="../Classes/ClipperBase/Methods/AddPath.htm">AddPath</a> or <a href="../Classes/ClipperBase/Methods/AddPaths.htm">AddPaths</a> methods and the filling rules (for subject and clip polygons separately) are specified in the <a href="../Classes/Clipper/Methods/Execute.htm">Execute</a> method.<br>
+</p>
+<p class="Body">路径是使用添加到快船对象<a href="../Classes/ClipperBase/Methods/AddPath.htm">让addpath</a>或<a href="../Classes/ClipperBase/Methods/AddPaths.htm">AddPaths</a>方法和填充规则（单独主题和素材多边形）在指定<a href="../Classes/Clipper/Methods/Execute.htm">执行</a>的方法。</p>
+<p class="Body"><br> 
+  Polygon regions are defined by one or more closed paths which may or may not intersect. A single polygon region can be defined by a single non-intersecting path or by multiple non-intersecting paths where there's typically an 'outer' path and one or more inner 'hole' paths. Looking at the three shapes in the image above, the middle shape consists of two concentric rectangles sharing the same clockwise orientation. With even-odd filling, where orientation can be disregarded, the inner rectangle would create a hole in the outer rectangular polygon. There would be no hole with non-zero filling. In the concentric rectangles on the right, where the inner rectangle is orientated opposite to the outer, a hole will be rendered with either even-odd or non-zero filling. A single path can also define multiple subregions if it self-intersects as in the example of the 5 pointed star shape below.<br>
+</p>
+<p class="Body"><br>
+多边形区域由可以或可以不相交的一个或多个封闭路径定义。单个多边形区域可以由单个不相交路径或多个非相交路径定义，其中，<strong>通常为&ldquo;外&rdquo;路径和一个或多个内&ldquo;孔&rdquo;路径。</strong><strong>看看上面的图像中的三个形状，中间形状由共享相同的顺时针方向的两个同心矩形组成。</strong><strong>对于偶数填充，其中方向可以被忽略，内部矩形将在外部矩形多边形中创建一个孔。</strong><strong>将不存在具有非零填充的孔。</strong><strong>在右侧的同心矩形中，其中内部矩形与外部相对地定向，将以奇偶或非零填充来渲染孔。</strong><strong>单个路径也可以定义多个子区域，如果它自相交，如在下面的五角星形的示例中。</strong></p>
+<p class="Body"><br> 
+  <img src="../../../../Images/evenodd.png" alt="" width="175" height="200" border="0">&nbsp;&nbsp; <img src="../../../../Images/nonzero.png" alt="" width="175" height="200" border="0">&nbsp;&nbsp; <img src="../../../../Images/positive.png" alt="" width="175" height="200" border="0">&nbsp;&nbsp; <img src="../../../../Images/negative.png" alt="" width="175" height="200" border="0"><br><br> By far the most widely used fill rules are Even-Odd (aka Alternate) and Non-Zero (aka Winding). Most graphics rendering libraries (<a href="http://www.antigrain.com/__code/include/agg_basics.h.html#filling_rule_e">AGG</a>, <a href="http://developer.android.com/reference/android/graphics/Path.FillType.html">Android Graphics</a>, <a href="http://cairographics.org/manual/cairo-cairo-t.html#cairo-fill-rule-t">Cairo</a>, <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms534120(v=vs.85).aspx">GDI+</a>, <a href="http://www.glprogramming.com/red/chapter11.html">OpenGL</a>, <a href="http://developer.apple.com/library/ios/#documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_paths/dq_paths.html#//apple_ref/doc/uid/TP30001066-CH211-TPXREF101">Quartz 2D</a> etc) and vector graphics storage formats (<a href="http://www.w3.org/TR/SVG/painting.html#FillRuleProperty">SVG</a>, Postscript, <a href="http://www.adobe.com/devnet-apps/photoshop/fileformatashtml/PhotoshopFileFormats.htm#50577409_17587">Photoshop</a> etc) support both these rules. However some libraries (eg Java's <a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Graphics.html#fillPolygon(int[], int[], int)">Graphics2D</a>) only support one fill rule. <em>Android Graphics</em> and <em>OpenGL</em> are the only libraries (that I'm aware of) that support multiple filling rules.<br>
+</p>
+<p class="Body">到目前为止，最广泛使用的填充规则是偶数奇数（也称为替代）和非零（又名绕组）。<a href="http://www.antigrain.com/__code/include/agg_basics.h.html#filling_rule_e">大多数图形渲染库（ AGG</a>，<a href="http://developer.android.com/reference/android/graphics/Path.FillType.html">Android Graphics</a>，<a href="http://cairographics.org/manual/cairo-cairo-t.html#cairo-fill-rule-t">Cairo</a>，<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms534120(v=vs.85).aspx">GDI +</a>，<a href="http://www.glprogramming.com/red/chapter11.html">OpenGL</a>，<a href="http://developer.apple.com/library/ios/#documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_paths/dq_paths.html#//apple_ref/doc/uid/TP30001066-CH211-TPXREF101">Quartz 2D</a>等）和矢量图形存储格式（<a href="http://www.w3.org/TR/SVG/painting.html#FillRuleProperty">SVG</a>，Postscript，<a href="http://www.adobe.com/devnet-apps/photoshop/fileformatashtml/PhotoshopFileFormats.htm#50577409_17587">Photoshop</a>等）支持这两个规则。但是一些库（例如Java的<a href="http://docs.oracle.com/javase/6/docs/api/java/awt/Graphics.html#fillPolygon(int[], int[], int)">Graphics2D</a>）只支持一个填充规则。<em>Android Graphics</em>和<em>OpenGL</em>是唯一支持多个填充规则的库（我知道）。</p>
+<p class="Body"><br> 
+  It's useful to note that <em>edge direction</em> has no affect on a winding number's odd-ness or even-ness. (This is why <span class="maroon"><a href="../Functions/Orientation.htm">orientation</a> is ignored when the <em>Even-Odd</em> rule is employed.)</span><br>
+</p>
+<p class="Body">有用的是注意<em>边缘方向</em>对绕组数的奇数或偶数没有影响。<a href="../Functions/Orientation.htm">（这就是为什么取向</a>的，则会被忽略<em>奇偶</em>采用的规则。）</p>
+<p class="Body"><br> 
+  The direction of the Y-axis does affect polygon orientation and <em>edge direction</em>. However, changing Y-axis orientation will only change the <em>sign</em> of winding numbers, not their magnitudes, and has no effect on either <em>Even-Odd</em> or <em>Non-Zero</em> filling.<br><br> 
+Y轴方向确实会影响多边形的方向和<em>边缘方向</em>。但是，改变Y轴方向只会改变绕组数字的<em>符号</em>，而不是它们的幅度，并且对<em>偶数奇数</em>或<em>非零</em>填充没有影响。</p>
+
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../Classes/Clipper/Methods/Execute.htm">Clipper.Execute（执行）</a>, <a href="../Classes/ClipperBase/Methods/AddPath.htm">ClipperBase.AddPath（添加路径）</a>, <a href="../Classes/ClipperBase/Methods/AddPaths.htm">ClipperBase.AddPaths（添加路径链表）</a>, <a href="../Functions/Orientation.htm">Orientation（方向）</a></p>
+    
+  <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
+  
+</body>
+
+</html>

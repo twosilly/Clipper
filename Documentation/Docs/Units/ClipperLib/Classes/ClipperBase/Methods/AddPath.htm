@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+  <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../../../Scripts/SyntaxHighlighter/scripts/shCore.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../../../Scripts/SyntaxHighlighter/scripts/shBrushDelphi.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../../../Scripts/SyntaxHighlighter/scripts/shBrushCpp.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../../../Scripts/SyntaxHighlighter/scripts/shBrushCSharp.js">
+  </script>
+    
+  <link type="text/css" rel="stylesheet" href="../../../../../../Scripts/SyntaxHighlighter/styles/shCoreDefault.css">
+    
+  <link type="text/css" rel="stylesheet" href="../../../../../../Scripts/SyntaxHighlighter/styles/shThemeDefault.css">
+  
+
+  <title>AddPath</title>
+
+  <link rel="stylesheet" href="../../../../../../Styles/default.css" type="text/css">
+
+    
+  <script type="text/javascript" src="../../../../../../Scripts/bootstrap.js">
+  </script>
+  
+</head>
+
+<body bgcolor="#FFFFFF">
+    
+  <!-- THIS FILE HAS BEEN AUTOMATICALLY PROCESSED FROM A SOURCE COPY -->
+    
+  <!-- DO NOT EDIT MANUALLY !!! -->
+  
+  <table class="Banner" cellspacing="0" cellpadding="0" border="1" bordercolorlight="#303080" bordercolordark="#7070B0">
+    <tr>
+      <td class="Banner" nowrap=""><a href="../../../../../_Body.htm" class="Banner"><img src="../../../../../../Images/_Home.gif" align="absmiddle">Home</a>
+      </td>
+      <td class="Banner" nowrap=""><a href="../../../_Body.htm" class="Banner"><img src="../../../../../../Images/_Unit.gif" align="absmiddle">ClipperLib</a>
+      </td>
+      <td class="Banner" nowrap=""><a href="../_Body.htm" class="Banner"><img src="../../../../../../Images/_Class.gif" align="absmiddle">ClipperBase</a>
+      </td>
+      <td class="Banner" width="100%" align="right"><img src="../../../../../../Images/_Project_Logo.gif" align="absmiddle">
+      </td>
+    </tr>
+  </table>
+  <h1>ClipperBase.AddPath</h1>
+
+
+  <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>function</b> AddPath(<b>const</b> path: <a href="../../../Types/Path.htm">TPath</a>; polyType: <a href="../../../Types/PolyType.htm">TPolyType</a>; Closed: Boolean): Boolean;</p>
+
+  <p class="Decl2"><span class="Comment">C++&nbsp;&raquo;</span> <b>bool</b> AddPath(<b>const</b> <a href="../../../Types/Path.htm">Path</a> &amp;pg, <a href="../../../Types/PolyType.htm">PolyType</a> polyType, <b>bool</b> closed);</p>
+
+  <p class="Decl3"><span class="Comment">C#&nbsp;&nbsp;&raquo;</span> <b>public virtual bool</b> AddPath(<a href="../../../Types/Path.htm">Path</a> pg, <a href="../../../Types/PolyType.htm">PolyType</a> polyType, <b>bool</b> closed);</p>
+<br>
+
+
+  <p class="Body"> <img src="../../../../../../Images/line_clipping.png" alt="" border="0" align="right"> Any number of subject and clip paths can be added to a clipping task, either individually via the AddPath() method, or as groups via the AddPaths() method, or even using both methods.</p>
+  <p class="Body"><br>
+    任何数量的subject（主题）和 clip（剪辑路径）可以通过AddPath（）方法单独添加到剪切任务，或者通过AddPaths（）方法添加到组中，或者甚至使用这两种方法。</p>
+  <p class="Body"><br> 
+    'Subject' paths may be either <em>open</em> (lines) or <em>closed</em> (polygons) or even a mixture of both, but <span class="maroon"><b>'clipping' paths must always be <em>closed</em></b></span>. Clipper allows polygons to clip both lines and other polygons, but doesn't allow lines to clip either lines or polygons.<br>
+  </p>
+  <p class="Body">&ldquo;'Subject'（主题）&rdquo;路径可以是<em>打开</em>（线）或<em>闭合</em>（多边形），或者甚至是两者的混合，但是<strong>&ldquo;<b>'clipping'</b>（剪切）&rdquo;路径必须总是<em>关闭</em></strong>。Clipper允许多边形剪辑线和其他多边形，但不允许线剪切线或多边形。</p>
+  <p class="Body"><br> 
+  With closed paths, <a href="../../../Functions/Orientation.htm">orientation</a> should conform with the <a href="../../../Types/PolyFillType.htm">filling rule</a> that will be passed via Clippper's <a href="../../Clipper/Methods/Execute.htm">Execute</a> method.<br>
+  对于封闭路径，<a href="../../../Functions/Orientation.htm">方向</a>应符合将通过Clippper的<a href="../../Clipper/Methods/Execute.htm">Execute</a>（执行）方法传递的<a href="../../../Types/PolyFillType.htm">填充规则</a>。<br> 
+  </p>
+
+
+
+<p class="Body"><b>Path Coordinate range</b>:<br> Path coordinates must be between &plusmn; 0x3FFFFFFFFFFFFFFF (&plusmn; <b>4.6e+18</b>), otherwise a range error will be thrown when attempting to add the path to the Clipper object. If coordinates can be kept between &plusmn; 0x3FFFFFFF (&plusmn; <b>1.0e+9</b>), a modest increase in performance (approx. 15-20%) over the larger range can be achieved by avoiding large integer math. If the preprocessor directive <a href="../../../PreProcessor/Defines.htm"><b>use_int32</b></a> is defined (allowing a further increase in performance of 20-30%), then the maximum range is restricted to &plusmn; 32,767. <br><br>
+  <strong>路径坐标范围</strong>：<br>
+路径坐标必须在±0x3FFFFFFFFFFFFFFF（± <strong>4.6e + 18</strong>）之间，否则，当尝试添加到Clipper对象的路径时，将抛出一个范围错误。如果坐标可以保持在±0x3FFFFFFF（± <strong>1.0e + 9</strong>）之间，可以通过避免大整数数学在较大范围内实现性能的适度增加（约15-20％）。如果定义了预处理器指令<a href="../../../PreProcessor/Defines.htm"><strong>use_int32</strong></a>（允许性能进一步提高20-30％），则最大范围限制为±32,767。</p>
+
+
+  <p class="Body"> <b>Return Value:</b><br> The function will return false if the path is invalid for clipping. A path is invalid for clipping when: 
+<ul>
+  
+      <li>it has less than 2 vertices</li>
+	
+      <li>it has 2 vertices but is not an open path</li>
+	
+      <li>the vertices are all co-linear and it is not an open path</li>
+
+    </ul> 
+</p>
+
+<p><strong>返回值：</strong><br>
+  如果路径对剪切无效，函数将返回false。在以下情况下，路径无效：</p>
+<ul>
+  <li>它有不到2个顶点</li>
+  <li>它有2个顶点，但不是一个开放的路径</li>
+  <li>顶点都是共线的，并且它不是开放路径</li>
+</ul>
+<br>
+
+
+
+
+  <h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../../../../Overview/Example.htm">Example（例子）</a>, <a href="../../Clipper/Methods/Execute.htm">Clipper.Execute（执行）</a>, <a href="AddPaths.htm">AddPaths（添加路径）</a>, <a href="../../../Functions/Orientation.htm">Orientation（方向）</a>, </p>
+  <p class="Body"><a href="../../../PreProcessor/Defines.htm">Defines（定义）</a>, <a href="../../../Types/Path.htm">Path</a>, <a href="../../../Types/PolyFillType.htm">PolyFillType（多边形填充类型）</a>, <a href="../../../Types/PolyType.htm">PolyType（多边形类型）</a></p>
+    
+<p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
+  
+</body>
+
+
+</html>

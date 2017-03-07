@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+  <script type="text/javascript" src="../../../../Scripts/jquery.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shCore.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shBrushDelphi.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shBrushCpp.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shBrushCSharp.js">
+  </script>
+    
+  <link type="text/css" rel="stylesheet" href="../../../../Scripts/SyntaxHighlighter/styles/shCoreDefault.css">
+    
+  <link type="text/css" rel="stylesheet" href="../../../../Scripts/SyntaxHighlighter/styles/shThemeDefault.css">
+  
+
+  <title>JoinType</title>
+
+  <link rel="stylesheet" href="../../../../Styles/default.css" type="text/css">
+
+    
+  <script type="text/javascript" src="../../../../Scripts/bootstrap.js">
+  </script>
+  
+</head>
+
+<body bgcolor="#FFFFFF">
+    
+  <!-- THIS FILE HAS BEEN AUTOMATICALLY PROCESSED FROM A SOURCE COPY -->
+    
+  <!-- DO NOT EDIT MANUALLY !!! -->
+  
+  <table class="Banner" cellspacing="0" cellpadding="0" border="1" bordercolorlight="#303080" bordercolordark="#7070B0">
+    <tr>
+      <td class="Banner" nowrap=""><a href="../../../_Body.htm" class="Banner"><img src="../../../../Images/_Home.gif" align="absmiddle">Home</a>
+      </td>
+      <td class="Banner" nowrap=""><a href="../_Body.htm" class="Banner"><img src="../../../../Images/_Unit.gif" align="absmiddle">ClipperLib</a>
+      </td>
+      <td class="Banner" width="100%" align="right"><img src="../../../../Images/_Project_Logo.gif" align="absmiddle">
+      </td>
+    </tr>
+  </table>
+  <h1>JoinType（链接类型，结合类型）</h1>
+
+  <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>type</b> TJoinType = (jtSquare, jtRound, jtMiter);</p>
+
+  <p class="Decl2"><span class="Comment"> C++&nbsp;&raquo;</span> <b>enum</b> JoinType {jtSquare, jtRound, jtMiter};</p>
+
+  <p class="Decl3"><span class="Comment">C#&nbsp;&nbsp;&raquo;</span> <b>public enum</b> JoinType {jtSquare, jtRound, jtMiter};</p>
+<br>
+
+  <p class="Body"> When adding paths to a <a href="../Classes/ClipperOffset/_Body.htm">ClipperOffset</a> object via the <a href="../Classes/ClipperOffset/Methods/AddPaths.htm">AddPaths</a> method, the joinType parameter may be one of three types - jtMiter, jtSquare or jtRound.  
+  <p class="Body">当通过<a href="../Classes/ClipperOffset/Methods/AddPaths.htm">AddPaths</a>方法向<a href="../Classes/ClipperOffset/_Body.htm">ClipperOffset</a>对象添加路径时，joinType参数可以是三种类型之一 - jtMiter，jtSquare或jtRound。<br>
+    <br> <img src="../../../../Images/jointypes.png" alt="" border="0"><br><br> 
+  <ul>
+	
+<li>jtMiter: There's a necessary limit to mitered joins since offsetting edges that join at very acute angles will produce excessively long and narrow 'spikes'. To contain these potential spikes, the ClippOffset object's <a href="../Classes/ClipperOffset/Properties/MiterLimit.htm"><b>MiterLimit</b></a> property specifies a maximum distance that vertices will be offset <em>(in multiples of delta)</em>. For any given edge join, when miter offsetting would exceed that maximum distance, 'square' joining is applied.<br></li>
+	
+      <li>jtRound: While flattened paths can never perfectly trace an arc, they are approximated by a series of arc chords (see ClipperObject's <a href="../Classes/ClipperOffset/Properties/ArcTolerance.htm"><b>ArcTolerance</b></a> property).<br></li>
+	
+      <li>jtSquare: Squaring is applied uniformally at all convex edge joins at 1 &times; delta.</li>
+
+    </ul> </p>
+    <ul>
+      <li>jt Miter（尖角）：斜切连接有一个必要的限制，因为以非常锐角连接的偏移边缘将产生过长和窄的&ldquo;spikes（尖峰）&rdquo;。为了包含这些潜在峰值，ClippOffset对象的<a href="../Classes/ClipperOffset/Properties/MiterLimit.htm"><strong>MiterLimit</strong></a>属性指定顶点将被偏移的最大距离<em>（以增量的倍数）</em>。对于任何给定的边连接，当斜接偏移将超过该最大距离时，应用&ldquo;正方形&rdquo;连接。<br>
+      </li>
+      <li>jtRound（圆）：虽然平铺路径永远不能完美地跟踪弧，但它们由一系列弧弦近似（参见ClipperObject的<a href="../Classes/ClipperOffset/Properties/ArcTolerance.htm"><strong>ArcTolerance</strong></a>属性）。<br>
+      </li>
+      <li>jtSquare（正方形）：在所有凸边连接处以1×delta均匀地应用平方。</li>
+    </ul>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../Classes/ClipperOffset/_Body.htm">ClipperOffset（Clippoer补偿）</a>, <a href="../Classes/ClipperOffset/Methods/AddPaths.htm">ClipperOffset.AddPaths（添加路径）</a>, <a href="../Classes/ClipperOffset/Properties/ArcTolerance.htm">ClipperOffset.ArcTolerance</a>, <a href="../Classes/ClipperOffset/Properties/MiterLimit.htm">ClipperOffset.MiterLimit（尖角限量）</a></p>
+    
+  <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
+  
+</body>
+
+</html>

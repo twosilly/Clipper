@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    
+  <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../../../Scripts/SyntaxHighlighter/scripts/shCore.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../../../Scripts/SyntaxHighlighter/scripts/shBrushDelphi.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../../../Scripts/SyntaxHighlighter/scripts/shBrushCpp.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../../../Scripts/SyntaxHighlighter/scripts/shBrushCSharp.js">
+  </script>
+    
+  <link type="text/css" rel="stylesheet" href="../../../../../../Scripts/SyntaxHighlighter/styles/shCoreDefault.css">
+    
+  <link type="text/css" rel="stylesheet" href="../../../../../../Scripts/SyntaxHighlighter/styles/shThemeDefault.css">
+  
+
+  <title>Execute</title>
+
+  <link rel="stylesheet" href="../../../../../../Styles/default.css" type="text/css">
+
+    
+  <script type="text/javascript" src="../../../../../../Scripts/bootstrap.js">
+  </script>
+  
+</head>
+
+<body bgcolor="#FFFFFF">
+    
+  <!-- THIS FILE HAS BEEN AUTOMATICALLY PROCESSED FROM A SOURCE COPY -->
+    
+  <!-- DO NOT EDIT MANUALLY !!! -->
+  
+  <table class="Banner" cellspacing="0" cellpadding="0" border="1" bordercolorlight="#303080" bordercolordark="#7070B0">
+    <tr>
+      <td class="Banner" nowrap=""><a href="../../../../../_Body.htm" class="Banner"><img src="../../../../../../Images/_Home.gif" align="absmiddle">Home</a>
+      </td>
+      <td class="Banner" nowrap=""><a href="../../../_Body.htm" class="Banner"><img src="../../../../../../Images/_Unit.gif" align="absmiddle">ClipperLib</a>
+      </td>
+      <td class="Banner" nowrap=""><a href="../_Body.htm" class="Banner"><img src="../../../../../../Images/_Class.gif" align="absmiddle">Clipper</a>
+      </td>
+      <td class="Banner" width="100%" align="right"><img src="../../../../../../Images/_Project_Logo.gif" align="absmiddle">
+      </td>
+    </tr>
+  </table>
+  <h1>Clipper.Execute</h1>
+
+
+  <p class="Decl"><span class="Comment">Del.&raquo;</span><br> <b>function</b> Execute(clipType: <a href="../../../Types/ClipType.htm">TClipType</a>;<br> &nbsp;&nbsp;<b>out</b> solution: <a href="../../../Types/Paths.htm">TPaths</a>;<br> &nbsp;&nbsp;subjFillType: <a href="../../../Types/PolyFillType.htm">TPolyFillType</a> = pftEvenOdd;<br> &nbsp;&nbsp;clipFillType: <a href="../../../Types/PolyFillType.htm">TPolyFillType</a> = pftEvenOdd): boolean; <b>overload</b>;<br><br> <b>function</b> Execute(clipType: <a href="../../../Types/ClipType.htm">TClipType</a>;<br> &nbsp;&nbsp;<b>out</b> solution: <a href="../../PolyTree/_Body.htm">TPolyTree</a>;<br> &nbsp;&nbsp;subjFillType: <a href="../../../Types/PolyFillType.htm">TPolyFillType</a> = pftEvenOdd;<br> &nbsp;&nbsp;clipFillType: <a href="../../../Types/PolyFillType.htm">TPolyFillType</a> = pftEvenOdd): boolean; <b>overload</b>; </p>
+
+
+  <p class="Decl2"><span class="Comment">C++&nbsp;&raquo;</span><br> <b>bool</b> Execute(<a href="../../../Types/ClipType.htm">ClipType</a> clipType,<br> &nbsp;&nbsp;<a href="../../../Types/Paths.htm">Paths</a> &amp;solution,<br> &nbsp;&nbsp;<a href="../../../Types/PolyFillType.htm">PolyFillType</a> subjFillType = pftEvenOdd,<br> &nbsp;&nbsp;<a href="../../../Types/PolyFillType.htm">PolyFillType</a> clipFillType = pftEvenOdd);<br><br> <b>bool</b> Execute(<a href="../../../Types/ClipType.htm">ClipType</a> clipType,<br> &nbsp;&nbsp;<a href="../../PolyTree/_Body.htm">PolyTree</a> &amp;solution,<br> &nbsp;&nbsp;<a href="../../../Types/PolyFillType.htm">PolyFillType</a> subjFillType = pftEvenOdd,<br> &nbsp;&nbsp;<a href="../../../Types/PolyFillType.htm">PolyFillType</a> clipFillType = pftEvenOdd); </p>
+
+  <p class="Decl3"><span class="Comment">C#&nbsp;&nbsp;&raquo;</span><br> <b>public bool</b> Execute(<a href="../../../Types/ClipType.htm">ClipType</a> clipType,<br> &nbsp;&nbsp;<a href="../../../Types/Paths.htm">Paths</a> solution,<br> &nbsp;&nbsp;<a href="../../../Types/PolyFillType.htm">PolyFillType</a> subjFillType,<br> &nbsp;&nbsp;<a href="../../../Types/PolyFillType.htm">PolyFillType</a> clipFillType);<br><br> <b>public bool</b> Execute(<a href="../../../Types/ClipType.htm">ClipType</a> clipType,<br> &nbsp;&nbsp;<a href="../../PolyTree/_Body.htm">PolyTree</a> solution,<br> &nbsp;&nbsp;<a href="../../../Types/PolyFillType.htm">PolyFillType</a> subjFillType,<br> &nbsp;&nbsp;<a href="../../../Types/PolyFillType.htm">PolyFillType</a> clipFillType); </p>
+
+<br>
+
+  <p class="Body"> Once <em>subject</em> and <em>clip</em> paths have been assigned (via <a href="../../ClipperBase/Methods/AddPath.htm">AddPath</a> and/or <a href="../../ClipperBase/Methods/AddPaths.htm">AddPaths</a>), <b>Execute</b> can then perform the clipping operation (intersection, union, difference or XOR) specified by the <a href="../../../Types/ClipType.htm">clipType</a> parameter.<br>  
+<p class="Body">一旦<em>subject</em>和<em>clip</em>路径已被分配（通过<a href="../../ClipperBase/Methods/AddPath.htm">让addpath</a>和/或<a href="../../ClipperBase/Methods/AddPaths.htm">AddPaths</a>），<strong>执行</strong>就可以执行由指定的剪裁操作（交集，并集或差异）<a href="../../../Types/ClipType.htm">clipType</a>参数。  
+<p class="Body"><br> 
+The <b>solution</b> parameter can be either a <a href="../../../Types/Paths.htm">Paths</a> or <a href="../../PolyTree/_Body.htm">PolyTree</a> structure. <span class="maroon">The Paths structure is simpler than the PolyTree stucture.</span> Because of this it is quicker to populate and hence clipping performance is a little better (it's roughly 10% faster). However, the PolyTree data structure provides more information about the returned paths which may be important to users. Firstly, <span class="maroon">the PolyTree structure preserves nested parent-child polygon relationships</span> (ie outer polygons owning/containing <em>holes</em> and holes owning/containing other outer polygons etc). Also, <span class="maroon"><b>only the PolyTree structure can differentiate between open and closed paths</b></span> since each PolyNode has an <a href="../../PolyNode/Properties/IsOpen.htm"><b>IsOpen</b></a> property. (The <a href="../../../Types/Path.htm"><b>Path</b></a> structure has no member indicating whether it's open or closed.) For this reason, <span class="maroon"><b>when <em>open</em> paths are passed to a Clipper object, the user must use a PolyTree object as the solution parameter</b></span>, otherwise an exception will be raised.<br>  
+<p class="Body"><strong><b>solution</b>（解答</strong>）参数可以是一个<a href="../../../Types/Paths.htm">路径</a>或<a href="../../PolyTree/_Body.htm">PolyTree</a>（多边形树）结构。Paths结构比PolyTree结构更简单。因为这更快地填充，因此剪切性能是一个更好一点（它的速度大约10％）。但是，PolyTree数据结构提供了有关可能对用户很重要的返回路径的更多信息。首先，PolyTree结构保留嵌套的父子多边形关系（即拥有/包含拥有/包含其他外部多边形的<em>孔</em>和洞的外部多边形等）。此外，<strong>只有PolyTree结构可以区分开放路径和封闭路径，</strong>因为每个PolyNode都有<a href="../../PolyNode/Properties/IsOpen.htm"><strong>IsOpen</strong></a>属性。（<a href="../../../Types/Path.htm"><strong>路径</strong></a>结构没有成员指示它是否打开或关闭。）因此，<strong>当<em>打开</em>路径传递到Clipper对象时，用户必须使用PolyTree对象作为解决方案参数</strong>，否则将引发异常。    
+  <p class="Body"><br> 
+  When a PolyTree object is used in a clipping operation on <b>open</b> paths, two ancilliary functions have been provided to quickly separate out <em>open</em> and <em>closed</em> paths from the solution - <a href="../../../Functions/OpenPathsFromPolyTree.htm"><b>OpenPathsFromPolyTree</b></a> and <a href="../../../Functions/ClosedPathsFromPolyTree.htm"><b>ClosedPathsFromPolyTree</b></a>. <a href="../../../Functions/PolyTreeToPaths.htm"><b>PolyTreeToPaths</b></a> is also available to convert path data to a Paths structure (irrespective of whether they're <em>open</em> or <em>closed</em>).<br><br> <img src="../../../../../../Images/common_edges.png" alt="" border="0" align="right"> There are several things to note about the solution paths returned: 
+  <p class="Body">  
+<ul>
+	
+<li>they aren't in any specific order</li>
+	
+      <li>they should never overlap or be self-intersecting (but see notes on <a href="../../../../../Overview/Rounding.htm"><b>rounding</b></a>)</li>
+	
+      <li>holes will be oriented opposite outer polygons</li>
+	
+      <li>the <strong>solution fill type</strong> can be considered either <em>EvenOdd</em> or <em>NonZero</em> since it will comply with either filling rule</li>
+  
+      <li>polygons may rarely share a common edge (though this is now <em>very rare</em> as of version 6)</li>
+
+    </ul> </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <blockquote>
+      <p> 当在<strong>（<b>open</b>）开放</strong>路径上的剪辑操作中使用PolyTree对象时，提供了两个辅助函数来快速地从解决方案 - <a href="../../../Functions/OpenPathsFromPolyTree.htm"><strong>OpenPathsFromPolyTree</strong></a>和<a href="../../../Functions/ClosedPathsFromPolyTree.htm"><strong>ClosedPathsFromPolyTree中</strong></a>分离出<em>打开</em>和<em>关闭的</em>路径。<a href="../../../Functions/PolyTreeToPaths.htm"><strong>PolyTreeToPaths</strong></a>也可用于将路径数据转换为路径结构（无论它们是<em>打开</em>还是<em>关闭</em>）。有几个要注意的解决方案路径返回： </p>
+    </blockquote>
+    <p>			 <br>
+      
+      
+</p>
+    <ul>
+      <li>它们不是以任何特定的顺序</li>
+      <li>它们不应该重叠或者自相交（但是参见关于<a href="../../../../../Overview/Rounding.htm"><b>rounding</b><strong>（整数取整）</strong></a>说明）</li>
+      <li>孔将被定向成与外部多边形相对</li>
+      <li>该<strong>解决方案填充类型</strong>可以看作是<em>EVENODD</em>或<em>非零的</em>，因为它会遵从任何规则灌装</li>
+      <li>多边形可能很少共享一个共同的边缘（虽然这是现在<em>非常罕见</em>的版本6）</li>
+    </ul>
+<p class="Body"> The <b>subjFillType</b> and <b>clipFillType</b> parameters define the polygon <a href="../../../Types/PolyFillType.htm"><b>fill rule</b></a> to be applied to the polygons (ie closed paths) in the subject and clip paths respectively. (It's usual though obviously not essential that both sets of polygons use the same fill rule.)<br></p>
+<p class="Body"><strong>subjFillType</strong>和<strong>clipFillType</strong>参数定义多边形<a href="../../../Types/PolyFillType.htm"><strong>填充规则</strong></a>被应用到多边形中的主体和夹路径分别（即闭合路径）。（尽管显然不是必须的，但是两组多边形使用相同的填充规则。）</p>
+<p class="Body"><br> 
+  <b>Execute</b> can be called multiple times without reassigning subject and clip polygons (ie when different clipping operations are required on the same polygon sets).<br>
+</p>
+<p class="Body"><strong><b>Execute</b>（执行）</strong>可以被多次调用而不重新分配主题和剪辑多边形（即，当在相同的多边形集合上需要不同的剪切操作时）。<br>  
+</p>
+
+
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../../../../Overview/Example.htm">Example（例子）</a>, <a href="../../../../../Overview/Rounding.htm">Rounding（整数取整）</a>, <a href="../../ClipperBase/Methods/AddPath.htm">ClipperBase.AddPath（添加路径）</a>, <a href="../../ClipperBase/Methods/AddPaths.htm">ClipperBase.AddPaths</a>, <a href="../../PolyNode/Properties/IsOpen.htm">PolyNode.IsOpen</a>, <a href="../../PolyTree/_Body.htm">PolyTree</a>, <a href="../../../Functions/ClosedPathsFromPolyTree.htm">ClosedPathsFromPolyTree</a>, <a href="../../../Functions/OpenPathsFromPolyTree.htm">OpenPathsFromPolyTree</a>, <a href="../../../Functions/PolyTreeToPaths.htm">PolyTreeToPaths</a>, <a href="../../../Types/ClipType.htm">ClipType</a>, <a href="../../../Types/Path.htm">Path</a>, <a href="../../../Types/Paths.htm">Paths</a>, <a href="../../../Types/PolyFillType.htm">PolyFillType</a></p>
+    
+  <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
+  
+</body>
+
+</html>

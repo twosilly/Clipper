@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+  <script type="text/javascript" src="../../../../Scripts/jquery.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shCore.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shBrushDelphi.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shBrushCpp.js">
+  </script>
+    
+  <script type="text/javascript" src="../../../../Scripts/SyntaxHighlighter/scripts/shBrushCSharp.js">
+  </script>
+    
+  <link type="text/css" rel="stylesheet" href="../../../../Scripts/SyntaxHighlighter/styles/shCoreDefault.css">
+    
+  <link type="text/css" rel="stylesheet" href="../../../../Scripts/SyntaxHighlighter/styles/shThemeDefault.css">
+  
+
+  <title>IntPoint</title>
+
+  <link rel="stylesheet" href="../../../../Styles/default.css" type="text/css">
+
+    
+  <script type="text/javascript" src="../../../../Scripts/bootstrap.js">
+  </script>
+  
+</head>
+
+<body bgcolor="#FFFFFF">
+    
+  <!-- THIS FILE HAS BEEN AUTOMATICALLY PROCESSED FROM A SOURCE COPY -->
+    
+  <!-- DO NOT EDIT MANUALLY !!! -->
+  
+  <table class="Banner" cellspacing="0" cellpadding="0" border="1" bordercolorlight="#303080" bordercolordark="#7070B0">
+    <tr>
+      <td class="Banner" nowrap=""><a href="../../../_Body.htm" class="Banner"><img src="../../../../Images/_Home.gif" align="absmiddle">Home</a>
+      </td>
+      <td class="Banner" nowrap=""><a href="../_Body.htm" class="Banner"><img src="../../../../Images/_Unit.gif" align="absmiddle">ClipperLib</a>
+      </td>
+      <td class="Banner" width="100%" align="right"><img src="../../../../Images/_Project_Logo.gif" align="absmiddle">
+      </td>
+    </tr>
+  </table>
+  <h1>IntPoint</h1>
+
+  <p class="Decl"><span class="Comment">Del.&raquo;</span> TIntPoint = <b>record</b> X, Y: <a href="./CInt.htm">cInt</a>; <b>end;</b></p>
+
+  <p class="Decl2"><span class="Comment">C++&nbsp;&raquo;</span> <b>struct</b> IntPoint { <a href="./CInt.htm">cInt</a> X; <a href="./CInt.htm">cInt</a> Y; <b>...</b> };</p>
+
+  <p class="Decl3"><span class="Comment">C#&nbsp;&nbsp;&raquo;</span> <b>public class</b> IntPoint { <b>public</b> <a href="./CInt.htm">cInt</a> X; { get; set; } <b>public</b> <a href="./CInt.htm">cInt</a> Y; { get; set; } <b>...</b> };</p>
+<br>
+
+
+  <p class="Body"> The <b>IntPoint</b> structure is used to represent all vertices in the Clipper Library. An <em>integer</em> storage type has been deliberately chosen to preserve <a href="http://www.mpi-inf.mpg.de/~kettner/pub/nonrobust_cgta_06.pdf" target="_blank"><b>numerical robustness</b></a>. (Early versions of the library used floating point coordinates, but it became apparent that floating point imprecision would always cause occasional errors.)<br>
+  </p>
+  <p class="Body">所述<strong>IntPoint</strong>结构用来代表Clipper库中的所有顶点。一个<em>整数</em>存储类型是故意选择保留<a href="http://www.mpi-inf.mpg.de/~kettner/pub/nonrobust_cgta_06.pdf" target="_blank"><strong>数值稳定性</strong></a>。（库的早期版本使用浮点坐标，但显而易见的是，浮点不精确将总是引起偶尔的错误。）</p>
+  <p class="Body"><br> 
+  A sequence of IntPoints are contained within a <a href="./Path.htm">Path</a> structure to represent a single contour.<br>
+  </p>
+  <p class="Body">IntPoints序列包含在<a href="./Path.htm">Path</a>结构中以表示单个轮廓。</p>
+  <p class="Body"><br> 
+  As of version 6, IntPoint now has <span class="maroon">an optional third member 'Z'</span>. This can be enabled by exposing (ie uncommenting) the PreProcessor define '<a href="../PreProcessor/Defines.htm"><b>use_xyz</b></a>'. When the Z member is used, its values will be copied to corresponding verticies in solutions to clipping operations. However, at points of intersection where there's no corresponding Z value, the value will be assigned zero unless a new value is provided by a user supplied <a href="../Classes/Clipper/Properties/ZFillFunction.htm"><b>callback function</b></a>.<br>
+  </p>
+  <p class="Body">从版本6，IntPoint现在有一个可选的第三个成员'Z'。这可以通过暴露（即取消注释）PreProcessor定义' <a href="../PreProcessor/Defines.htm"><strong>use_xyz</strong></a> ' 来启用。当使用Z构件时，其值将被复制到解码剪切操作的相应垂直。然而，在没有相应Z值的交叉点处，该值将被分配为零，除非用户提供的<a href="../Classes/Clipper/Properties/ZFillFunction.htm"><strong>回调函数（Clipper.ZFillFunction）</strong></a>提供了新值。</p>
+  <p class="Body"><br> 
+  Users wishing to clip or offset polygons containing <em>floating point</em> coordinates need to use appropriate scaling when converting these values to and from <em>IntPoints</em>.<br>
+  </p>
+  <p class="Body">用户希望clip（剪辑）或offset（偏移）包含浮点坐标的多边形，需要使用适当的缩放时，将这些值与intpoints。</p>
+  <p class="Body"><br> 
+  See also the notes on <a href="../../../Overview/Rounding.htm">rounding</a>. </p>
+  <p class="Body">参见<a href="../../../Overview/Rounding.htm">整数取整</a>的注意事项。</p>
+
+
+
+
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../../Overview/Rounding.htm">Rounding</a>（整数取整）, <a href="../Classes/Clipper/Properties/ZFillFunction.htm">Clipper.ZFillFunction（Z填充函数）</a>, <a href="../PreProcessor/Defines.htm">Defines（定义）</a>, <a href="CInt.htm">CInt</a>, <a href="Path.htm">Path</a><a href="Paths.htm">（路劲）</a>, <a href="Paths.htm">Paths（路劲）</a></p>
+    
+<p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
+  
+</body>
+
+</html>

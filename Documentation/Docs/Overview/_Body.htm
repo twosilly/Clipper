@@ -1,0 +1,146 @@
+<html>
+
+<head>
+    
+  <script type="text/javascript" src="../../Scripts/jquery.js">
+  </script>
+    
+  <script type="text/javascript" src="../../Scripts/SyntaxHighlighter/scripts/shCore.js">
+  </script>
+    
+  <script type="text/javascript" src="../../Scripts/SyntaxHighlighter/scripts/shBrushDelphi.js">
+  </script>
+    
+  <script type="text/javascript" src="../../Scripts/SyntaxHighlighter/scripts/shBrushCpp.js">
+  </script>
+    
+  <script type="text/javascript" src="../../Scripts/SyntaxHighlighter/scripts/shBrushCSharp.js">
+  </script>
+    
+  <link type="text/css" rel="stylesheet" href="../../Scripts/SyntaxHighlighter/styles/shCoreDefault.css">
+    
+  <link type="text/css" rel="stylesheet" href="../../Scripts/SyntaxHighlighter/styles/shThemeDefault.css">
+  
+
+  <title>Overview</title>
+
+  <link rel="stylesheet" href="../../Styles/default.css" type="text/css">
+
+  <meta name="keywords" content="clipper,clipping,clip,intersection,union,polygon,offset,library,algorithm,line">
+
+    
+  <script type="text/javascript" src="../../Scripts/bootstrap.js">
+  </script>
+  
+</head>
+
+<body bgcolor="#FFFFFF">
+    
+  <!-- THIS FILE HAS BEEN AUTOMATICALLY PROCESSED FROM A SOURCE COPY -->
+    
+  <!-- DO NOT EDIT MANUALLY !!! -->
+  
+<table class="Banner" cellspacing="0" cellpadding="0" border="1" bordercolorlight="#303080" bordercolordark="#7070B0">
+    <tr>
+      <td class="Banner" nowrap=""><a href="../_Body.htm" class="Banner"><img src="../../Images/_Home.gif" align="absmiddle">Home</a>
+      </td>
+      <td class="Banner" width="100%" align="right"><img src="../../Images/_Project_Logo.gif" align="absmiddle">
+      </td>
+    </tr>
+  </table>
+  <h1>Overview(概述)</h1>
+
+
+  <p class="Body"> The <a href="../_Body.htm"><b>Clipper Library</b></a> performs <b><a href="../Units/ClipperLib/Types/ClipType.htm">clipping</a></b>, and <a href="../Units/ClipperLib/Classes/ClipperOffset/_Body.htm"><b>offsetting</b></a> of both lines and polygons.  
+  <p class="Body">在<a href="../_Body.htm"><strong>Clipper 库</strong></a>进行<strong><a href="../Units/ClipperLib/Types/ClipType.htm"><b><a href="../Units/ClipperLib/Types/ClipType.htm">clipping</a></b></a></strong>，并<a href="../Units/ClipperLib/Classes/ClipperOffset/_Body.htm"><b>offsetting</b></a>线条和多边形。<br>
+    <br> A number of features set Clipper apart from other clipping libraries: 
+  <p class="Body">  
+  <ul>	
+	  
+    <li>it accepts all types of polygons including self-intersecting ones</li>
+    
+      <li>it supports multiple polygon filling rules (EvenOdd, NonZero, Positive, Negative)</li>
+    
+      <li>it's very fast relative to <a href="http://www.angusj.com/delphi/clipper.php#features" target="_blank">other libraries</a></li>
+	  
+      <li>it's <a href="http://www.mpi-inf.mpg.de/~kettner/pub/nonrobust_cgta_06.pdf" target="_blank">numerically robust</a></li>
+	  
+      <li>it also performs line and polygon offsetting</li>
+    
+      <li>it's free to use in both freeware and commercial applications</li>
+</ul>
+  <p>&nbsp;</p>
+  <blockquote>
+    <p><span class="Body"><strong>	 许多功能设置Clipper与其他剪辑库： </strong></span></p>
+  </blockquote>
+  <ol>
+    <li>它接受所有类型的多边形，包括自相交的</li>
+    <li>它支持多边形填充规则（EvenOdd，NonZero，Positive，Negative）</li>
+    <li>它相对于<a href="http://www.angusj.com/delphi/clipper.php#features" target="_blank">其他库</a>非常快</li>
+    <li>它的<a href="http://www.mpi-inf.mpg.de/~kettner/pub/nonrobust_cgta_06.pdf" target="_blank">数值健全性</a></li>
+    <li>它还执行线和多边形偏移</li>
+    <li>它可以免费使用在免费软件和商业应用程序</li>
+  </ol>
+<br> 
+  </p>
+
+
+  <p class="Body"> <b>Current Version:</b> 6.2.1<br><br> <b>Author &amp; copyright:</b><br> Angus Johnson. Copyright &copy; 2010-2014<br> License, terms and conditions: <a href="./License.htm">Boost Software License</a></p>
+<p class="Body"><br>
+  </p>
+
+
+  <p class="Body" id="terminology"> <img src="../../Images/int.png" alt="" border="0" align="right"> <b>Terminology:</b><br> 
+<ul>
+  
+      <li><b>Clipping:</b> commonly refers to the process of cutting away from a set of 2-dimensional geometric shapes those parts that are outside a rectangular '<em>clipping</em>' window. This can be achieved by <em>intersecting</em> subject paths (lines and polygons) with a clipping rectangle. In a more general sense, the clipping window need not be rectangular but can be any type of polygon, even multiple polygons. Also, while clipping typically refers to an <em>intersection</em> operation, in this documentation it will refer to any one of the <a href="../Units/ClipperLib/Types/ClipType.htm">four boolean operations</a> (intersection, union, difference and exclusive-or).</li>
+	
+      <li><b>Path:</b> is an ordered sequence of vertices defining a single geometric contour that's either a line (an open path) or a polygon (a closed path).</li> 
+  
+      <li><b>Line:</b> or polyline is an <em>open</em> path containing 2 or more vertices.</li>
+  
+      <li><b>Polygon:</b> commonly refers to a two-dimensional region bounded by an outer non-intersecting closed contour. That region may also contain a number of 'holes'. In this documentation however, polygon will simply refer to a <em>closed</em> path.</li>
+  
+      <li><b>Contour:</b> synonymous with path.</li>
+	
+      <li><b>Hole:</b> is a closed region within a polygon that's not part of the polygon. A 'hole polygon' is a closed path that forms the outer boundaries of a hole.</li>
+   
+      <li><b>Polygon Filling Rule:</b> the <a href="../Units/ClipperLib/Types/PolyFillType.htm"><b>filling rule</b></a>, together with a list of closed paths, defines those regions (bounded by paths) that are <em>inside</em> (ie regions 'brush filled' in a graphical display) and those which are <em>outside</em> (ie 'holes').</li>
+
+</ul>
+<strong> 术语：</strong><br> 
+</p>
+<ul>
+  <li><strong>剪切：</strong>通常指的是从一组2维几何形状切掉那些在矩形&ldquo; <em>剪辑</em> &rdquo;窗口外的那些部分的过程。这可以通过<em>将</em>对象路径（线和多边形）与剪切矩形相交来实现。在更一般的意义上，剪切窗口不必是矩形的，而是可以是任何类型的多边形，甚至多个多边形。此外，虽然裁剪通常指<em>交叉</em>操作，但在本文档中，它将引用<a href="../Units/ClipperLib/Types/ClipType.htm">四个布尔运算</a>（交集，并集，差异和异或）中的任何一个。</li>
+  <li><strong>路径：</strong>是定义单个几何轮廓的顶点的有序序列，该几何轮廓是线（开放路径）或多边形（闭合路径）。</li>
+  <li><strong>线：</strong>或折线是包含2个或多个顶点的<em>开放</em>路径。</li>
+  <li><strong>多边形：</strong>通常指由外部非相交闭合轮廓限定的二维区域。该区域还可以包含多个&ldquo;孔&rdquo;。然而，在本文档中，多边形将简单地引用<em>封闭</em>路径。</li>
+  <li><strong>轮廓：</strong>与路径同义。</li>
+  <li><strong>孔：</strong>是多边形内不是多边形一部分的封闭区域。&ldquo;孔多边形&rdquo;是形成孔的外边界的封闭路径。</li>
+  <li><strong>多边形填充规则：</strong>该<a href="../Units/ClipperLib/Types/PolyFillType.htm"><strong>填充规则</strong></a>，具有封闭路径列表一起，定义了那些地区（以道路为界）<em>内</em>（即地区，在图形显示&ldquo;刷充满'）和那些<em>外</em>（即&rdquo;洞&ldquo;） 。</li>
+</ul>
+
+
+<p class="Body"> <b>Distribution package contents:</b><br><br> The ZIP package contains the Clipper library's source code, a Windows CHM help file, HTML help, and a number of compiled demo applications (with full source code). The library was initially written in <strong>Delphi Pascal</strong> (and compiles with Delphi version 7 or above) but now contains <strong>C++</strong>, <strong>C#</strong> and <strong>Python</strong> translations too. The library's source code in each language is about 5000 lines. The Delphi code contains reasonably extensive comments, but comments are fewer in the C++ and C# code. The included sample applications show how Clipper can be used with the different languages using a number of graphics display libraries including - <b>AGG, Cairo, OpenGL, Graphics32, GDI+</b> and <b>SVG</b>.<br></p>
+<p class="Body"><strong>分发包内容：</strong><br>
+  <br>
+ZIP包包含Clipper库的源代码，Windows CHM帮助文件，HTML帮助和大量编译演示应用程序（具有完整的源代码）。该库最初是用<strong>Delphi Pascal</strong>编写的（并且与Delphi版本7或更高版本一起编译），但现在包含<strong>C ++</strong>，<strong>C＃</strong>和<strong>Python</strong>翻译。该库的每种语言的源代码大约5000行。Delphi代码包含相当广泛的注释，但在C ++和C＃代码中的注释较少。所包含的示例应用程序显示了如何使用Clipper与不同的语言使用许多图形显示库，包括 - <strong>AGG，Cairo，OpenGL，Graphics32，</strong>GDI + 和<strong>SVG</strong>。</p>
+<p class="Body"><br> 
+  <b>Download Link（下载链接）:</b><br><br> 
+  <a href="http://sourceforge.net/projects/polyclipping">SourceForge</a>（参考）<br><br> 
+  <b>References（文献）:</b><br><br> The Library is based on but significantly extends Bala Vatti's polygon clipping algorithm as described in <a href="http://portal.acm.org/citation.cfm?id=129906" target="_blank">"A generic solution to polygon clipping"</a>, Communications of the ACM, Vol 35, Issue 7 (July 1992) pp 56-63.<br><br> A section in <a href="http://books.google.com/books?q=vatti+clipping+agoston" target="_blank">"Computer graphics and geometric modeling: implementation and algorithms"</a> by By Max K. Agoston (Springer, 2005) discussing <em>Vatti Polygon Clipping</em> was also helpful in creating the initial Clipper implementation.<br><br> The paper titled <a href="http://www.me.berkeley.edu/~mcmains/pubs/DAC05OffsetPolygon.pdf">"Polygon Offsetting by Computing Winding Numbers"</a> by Chen & McMains (Paper no. DETC2005-85513, ASME 2005. Pages 565-575) contains helpful discussion on the complexities of polygon offsetting together with some solutions.<br><br>  
+图书馆是基于但显着扩展Bala Vatti的多边形裁剪算法，如<a href="http://portal.acm.org/citation.cfm?id=129906" target="_blank">&ldquo;</a> ACM通讯第35卷第7期（1992年7月）第56-63页中的<a href="http://portal.acm.org/citation.cfm?id=129906" target="_blank">&rdquo;A generic solution to polygon clipping&ldquo;</a>中所述。由Max Max.Agoston（Springer，2005）讨论Vatti <em>多边形剪辑</em><br>
+<br>
+的<a href="http://books.google.com/books?q=vatti+clipping+agoston" target="_blank">&ldquo;计算机图形和几何建模：实现和算法&rdquo;</a>一节也有助于创建初始Clipper实现。Chen＆McMains 的论文<a href="http://www.me.berkeley.edu/~mcmains/pubs/DAC05OffsetPolygon.pdf">&ldquo;Polygon Offsetting by Computing Winding Numbers&rdquo;</a>（论文编号DETC2005-85513，ASME 2005。</p>
+      
+
+  <h2 id="Auto-SeeAlso">See Also（请参阅）</h2>
+  <p class="Body"><a href="../_Body.htm">Source</a>, <a href="License.htm">License</a>, <a href="../Units/ClipperLib/Classes/Clipper/_Body.htm">Clipper</a>, <a href="../Units/ClipperLib/Classes/ClipperOffset/_Body.htm">ClipperOffset</a>, <a href="../Units/ClipperLib/Types/ClipType.htm">ClipType</a>, <a href="../Units/ClipperLib/Types/PolyFillType.htm">PolyFillType</a></p>
+  <p class="Body"><a href="../_Body.htm">源</a>，<a href="License.htm">许可证</a>，<a href="../Units/ClipperLib/Classes/Clipper/_Body.htm">Clipper</a>，<a href="../Units/ClipperLib/Classes/ClipperOffset/_Body.htm">ClipperOffset</a>，<a href="../Units/ClipperLib/Types/ClipType.htm">ClipType</a>，<a href="../Units/ClipperLib/Types/PolyFillType.htm">PolyFillType</a></p>
+    
+<p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
+  
+</body>
+
+
+</html>
