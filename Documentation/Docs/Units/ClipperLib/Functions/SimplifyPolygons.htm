@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../Scripts/jquery.js">
   </script>
     
@@ -48,7 +48,7 @@
       </td>
     </tr>
   </table>
-  <h1>SimplifyPolygons</h1>
+  <h1>SimplifyPolygons（简单化路径链表）</h1>
 
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>function</b> SimplifyPolygons(<b>const</b> polys: TPaths; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FillType: TPolyFillType = pftEvenOdd): TPaths;</p>
@@ -61,13 +61,22 @@
 <br>
 
 
-  <p class="Body"> Removes self-intersections from the supplied polygons (by performing a boolean <em>union</em> operation using the nominated <a href="../Types/PolyFillType.htm">PolyFillType</a>).<br> Polygons with non-contiguous duplicate vertices (ie 'vertices are touching') will be split into two polygons.<br><br> C++ only: This function is overloaded. In the first definition, the <em>in_polys</em> and <em>out_polys</em> parameters can reference the same <em>Paths</em> object though in that case the calling code might be clearer if the second definition (accepting a single <em>Paths</em> parameter) is used.<br><br> <em>Note: There's currently no guarantee that polygons will be strictly simple since 'simplifying' is still a work in progress.</em><br><br> <img src="../../../../Images/simplify.png" alt="" border="0"><br> <img src="../../../../Images/simplify2.png" alt="" border="0"> <img src="../../../../Images/simplify3.png" alt="" border="0"> </p>
-
-
-
-
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../Classes/Clipper/Properties/StrictlySimple.htm">Clipper.StrictlySimple</a>, <a href="CleanPolygons.htm">CleanPolygons</a>, <a href="../Types/PolyFillType.htm">PolyFillType</a></p>
+  <p class="Body"> Removes self-intersections from the supplied polygons (by performing a boolean <em>union</em> operation using the nominated <a href="../Types/PolyFillType.htm">PolyFillType</a>).<br> 
+    Polygons with non-contiguous duplicate vertices (ie 'vertices are touching') will be split into two polygons.<br>
+  </p>
+<p class="Body">从提供的多边形中删除自交集（通过使用指定的 <a href="../Types/PolyFillType.htm">PolyFillType</a>执行布尔<em>联合</em>运算）。<br>
+具有不连续的重复顶点（即&ldquo;顶点接触&rdquo;）的多边形将被分割成两个多边形。</p>
+  <p class="Body"><br> 
+  C++ only: This function is overloaded. In the first definition, the <em>in_polys</em> and <em>out_polys</em> parameters can reference the same <em>Paths</em> object though in that case the calling code might be clearer if the second definition (accepting a single <em>Paths</em> parameter) is used.<br>
+  </p>
+  <p class="Body">仅限C ++：此函数重载。在第一个定义中，<em>in_polys</em>和<em>out_polys</em>参数可以引用相同的<em>Paths</em>对象，尽管在这种情况下，如果使用第二个定义（接受单个<em>Paths</em>参数），调用代码可能更清晰。</p>
+  <p class="Body"><br> 
+    <em>Note: There's currently no guarantee that polygons will be strictly simple since 'simplifying' is still a work in progress.</em></p>
+  <p class="Body"><em>注意：目前不能保证多边形将严格简单，因为'simplifying(简化)'仍然是一个正在进行中的工作。</em></p>
+  <p class="Body"><br>
+    <br> <img src="../../../../Images/simplify.png" alt="" border="0"><br> <img src="../../../../Images/simplify2.png" alt="" border="0"> <img src="../../../../Images/simplify3.png" alt="" border="0"> </p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../Classes/Clipper/Properties/StrictlySimple.htm">Clipper.StrictlySimple（完全简单）</a>, <a href="CleanPolygons.htm">CleanPolygons（清除多边形链表“优化多边形”）</a>, <a href="../Types/PolyFillType.htm">PolyFillType（多边形填充类型）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

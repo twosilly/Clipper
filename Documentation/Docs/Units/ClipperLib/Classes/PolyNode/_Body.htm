@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,20 +50,27 @@
       </td>
     </tr>
   </table>
-  <h1>PolyNode</h1>
+  <h1>PolyNode（多边形节点）</h1>
 <br>
 
-  <p class="Body"> <b>PolyNodes</b> are encapsulated within a <a href="../PolyTree/_Body.htm"><b>PolyTree</b></a> container, and together provide a data structure representing the parent-child relationships of polygon contours returned by Clipper's <a href="../Clipper/Methods/Execute.htm"><b>Execute</b></a> method.<br><br> A <b>PolyNode</b> object represents a single polygon. Its <a href="./Properties/IsHole.htm">IsHole</a> property indicates whether it's an <a href="../../../../Overview/_Body.htm#terminology">outer</a> or a <a href="../../../../Overview/_Body.htm#terminology">hole</a>. PolyNodes may own any number of PolyNode children (<a href="./Properties/Childs.htm"><b>Childs</b></a>), where children of outer polygons are holes, and children of holes are (nested) outer polygons.<br><br> </p>
+  <p class="Body"> <b>PolyNodes</b> are encapsulated within a <a href="../PolyTree/_Body.htm"><b>PolyTree</b></a> container, and together provide a data structure representing the parent-child relationships of polygon contours returned by Clipper's <a href="../Clipper/Methods/Execute.htm"><b>Execute</b></a> method.<br></p>
+  <p class="Body"><strong>PolyNodes</strong>封装在<a href="../PolyTree/_Body.htm"><strong>PolyTree</strong></a>容器中，并且一起提供表示由Clipper的<a href="../Clipper/Methods/Execute.htm"><strong>Execute</strong></a>方法返回的多边形轮廓的父子关系的数据结构。</p>
+  <p class="Body"><br> 
+  A <b>PolyNode</b> object represents a single polygon. Its <a href="./Properties/IsHole.htm">IsHole</a> property indicates whether it's an <a href="../../../../Overview/_Body.htm#terminology">outer</a> or a <a href="../../../../Overview/_Body.htm#terminology">hole</a>. PolyNodes may own any number of PolyNode children (<a href="./Properties/Childs.htm"><b>Childs</b></a>), where children of outer polygons are holes, and children of holes are (nested) outer polygons.<br><br> 
+  一个<strong>PolyNode</strong>对象表示一个多边形。它的<a href="./Properties/IsHole.htm">（是不是孔）IsHole</a>属性指示它是<a href="../../../../Overview/_Body.htm#terminology">外部</a>还是<a href="../../../../Overview/_Body.htm#terminology">孔</a>。PolyNodes可以拥有任意数量的PolyNode子节点（<a href="./Properties/Childs.htm"><strong>（孩子们）Childs</strong></a>），其中外部多边形的子节点是孔，孔子节点是（嵌套的）外部多边形。</p>
 
-  <h2 id="Auto-Reference">Reference</h2>
+<h2 id="Auto-Reference">Reference（参考）</h2>
   <table>
-    <tr><th>Fields
-      </th><th>Methods
-      </th><th>Properties
+    <tr>
+      <th>Fields
+      （字段）</th>
+    <th>Methods（方法）
       </th>
+    <th>Properties
+      （属性）</th>
     </tr>
     <tr>
-      <td colspan="2" class="White">In PolyNode:
+      <td colspan="2" class="White">In PolyNode（在 PolyNode中）:
       </td>
     </tr>
     <tr>
@@ -71,7 +78,7 @@
       </td>
       <td><a href="Methods/GetNext.htm">GetNext</a>
       </td>
-      <td><a href="Properties/ChildCount.htm">ChildCount</a>
+      <td><a href="Properties/ChildCount.htm">ChildCount（子类数量）</a>
       </td>
     </tr>
     <tr>
@@ -79,7 +86,14 @@
       </td>
       <td>
       </td>
-      <td><a href="Properties/Childs.htm">Childs</a>
+      <td><a href="Properties/Childs.htm">Childs（子类的列表）</a></td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td><a href="Properties/Contour.htm">Contour（轮廓）</a>
       </td>
     </tr>
     <tr>
@@ -87,36 +101,25 @@
       </td>
       <td>
       </td>
-      <td><a href="Properties/Contour.htm">Contour</a>
-      </td>
+      <td><a href="Properties/IsHole.htm">IsHole（是孔）</a></td>
     </tr>
     <tr>
       <td>
       </td>
       <td>
       </td>
-      <td><a href="Properties/IsHole.htm">IsHole</a>
-      </td>
+      <td><a href="Properties/IsOpen.htm">IsOpen（是开放的）</a></td>
     </tr>
     <tr>
       <td>
       </td>
       <td>
       </td>
-      <td><a href="Properties/IsOpen.htm">IsOpen</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-      </td>
-      <td>
-      </td>
-      <td><a href="Properties/Parent.htm">Parent</a>
-      </td>
+      <td><a href="Properties/Parent.htm">Parent（父类）</a></td>
     </tr>
   </table>
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../../../../Overview/_Body.htm">Overview</a>, <a href="../Clipper/Methods/Execute.htm">Clipper.Execute</a>, <a href="../PolyTree/_Body.htm">PolyTree</a></p>
+  <h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../../../Overview/_Body.htm">Overview（概观）</a>, <a href="../Clipper/Methods/Execute.htm">Clipper.Execute（Clipper.执行）</a>, <a href="../PolyTree/_Body.htm">PolyTree（多边形树）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

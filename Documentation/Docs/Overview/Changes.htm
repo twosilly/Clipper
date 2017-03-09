@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../Scripts/jquery.js">
   </script>
     
@@ -111,7 +111,9 @@
       </td>
     </tr>
   </table>
-  <h1>Changes</h1>
+  <h1>Changes（变化）</h1>
+  <h1><a href="Changes_ZH.html">变化(中文翻译版)</a></h1>
+<p>&nbsp;</p>
 
   <ul class="barebones expandable">
 
@@ -361,7 +363,7 @@ instead of using 64bit integers. Using 32bit integers improves clipping
 performance by about 20-30%. (This has required the introduction of a
 new <a href="../Units/ClipperLib/Types/CInt.htm"><b>cInt</b></a>
 integer type.) The trade-off to this speed up in performance is a very
-restricted vertex coordinate range of � 46340.
+restricted vertex coordinate range of � 46340.
         
           </ul> </li>
     
@@ -628,7 +630,7 @@ Another orientation bug fixed.
           <h2>Bugfix:</h2> 
           <ul class="dots">
 Significant fixes in and tidy of the internal Int128 class (which is
-used only when polygon coordinate values are greater than �0x3FFFFFFF
+used only when polygon coordinate values are greater than �0x3FFFFFFF
 (~1.07e9)).
         
           </ul> </li>
@@ -818,7 +820,7 @@ Potential for memory overflow errors when using ExPolygons structure.
         <li> 
           <h2>Bugfix:</h2> 
           <ul class="dots">
-The polygon coordinate range has been reduced to � 0x3FFFFFFFFFFFFFFF
+The polygon coordinate range has been reduced to � 0x3FFFFFFFFFFFFFFF
 (4.6e18).
         
           </ul> </li>

@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,7 +50,7 @@
       </td>
     </tr>
   </table>
-  <h1>PolyNode.GetNext</h1>
+  <h1>PolyNode.GetNext（得到下一个）</h1>
 
 
   <p class="Decl"><span class="Comment"> Del.&raquo; </span><b>function</b> GetNext: TPolyNode;</p>
@@ -60,35 +60,40 @@
   <p class="Decl3"><span class="Comment"> C#&nbsp;&nbsp;&raquo;</span> <b>public <span class="CSharp">PolyNode</span></b> GetNext();</p>
 
 
-  <p class="Body"> The returned Polynode will be the first child if any, otherwise the next sibling, otherwise the next sibling of the Parent etc.<br><br> A PolyTree can be traversed very easily by calling GetFirst() followed by GetNext() in a loop until the returned object is a null pointer ...<br><br> 
-    <table cellspacing="0" cellpadding="0" border="0" align="left" style="margin: 0;" width="600px">
+  <p class="Body"> The returned Polynode will be the first child if any, otherwise the next sibling, otherwise the next sibling of the Parent etc.<br>  
+<p class="Body">返回的Polynode将是第一个子节点，否则为下一个兄弟节点，否则为父节点的下一个兄弟  
+  <p class="Body"><br> 
+  A PolyTree can be traversed very easily by calling GetFirst() followed by GetNext() in a loop until the returned object is a null pointer ...<br><br> 
+节点。通过在循环中调用GetFirst（）和GetNext（），可以非常容易地遍历PolyTree，直到返回的对象空指针...
+  <p class="Body">  
+<table cellspacing="0" cellpadding="0" border="0" align="left" style="margin: 0;" width="600px">
   
-      <tr>
+<tr>
         <td class="White">
   
           <pre class="brush: cpp;">
   PolyTree polytree;
   //call to Clipper.Execute method here which fills 'polytree'
-  
+  //打电话clipper.execute方法填补&quot;树状&quot;
   PolyNode* polynode = polytree.GetFirst();
   while (polynode)
   {
     //do stuff with polynode here
-	
+	 //与polynode这里做的东西
     polynode = polynode-&gt;GetNext();
   }
   
           </pre>
   
-        </td>
+    </td>
       </tr>
   
     </table> <div style="clear:both;"></div> </p>
  
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../../PolyTree/Methods/GetFirst.htm">PolyTree.GetFirst</a></p>
+  <h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../PolyTree/Methods/GetFirst.htm">PolyTree.GetFirst（多边形树.得到上一个节点）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

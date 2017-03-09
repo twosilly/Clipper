@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../Scripts/jquery.js">
   </script>
     
@@ -48,53 +48,94 @@
       </td>
     </tr>
   </table>
-  <h1>FAQ</h1>
+  <h1>FAQ（常见问题）</h1>
 
 
   <p class="Decl5">Why does Clipper use integer coordinates, not floats?</p>
 
   <p class="Decl4">This has been done to preserve <a href="http://www.mpi-inf.mpg.de/~kettner/pub/nonrobust_cgta_06.pdf" target="_blank">numerical robustness</a>. Early versions of the library did use floating point coordinates, but it became apparent that floating point imprecision was always going to cause occasional errors.<br><br> </p>
-
-
-  <p class="Decl5">How do I use floating point coordinates with Clipper?</p>
+  <p class="Decl5">为什么Clipper使用整数坐标，而不是浮点数？</p>
+  <blockquote>
+    <p>这样做是为了保持<a href="http://www.mpi-inf.mpg.de/~kettner/pub/nonrobust_cgta_06.pdf" target="_blank">数值稳定性</a>。早期版本的库使用了浮点坐标，但很明显，浮点不精确总是会导致偶尔的错误。</p>
+  </blockquote>
+<p class="Decl5">How do I use floating point coordinates with Clipper?</p>
 
   <p class="Decl4">It's a simple task to multiply your floating point coordinates by a scaling factor (that's typically a power of 10 depending on the desired precision). Then with the solution paths, divide the returned coordinates by this same scaling factor. Clipper accepts integer coordinates as large as &plusmn;4.6e18, so it can accommodate very large scaling.<br><br> </p>
+  <p class="Decl5">如何使用Clipper的浮点坐标？</p>
+  <blockquote>
+    <p>这是一个简单的任务，乘以您的浮点坐标一个缩放因子（通常是10的倍数，取决于所需的精度）。然后使用求解路径，以相同的缩放因子除以返回的坐标。Clipper接受整数坐标大到±4.6e18，因此它可以适应非常大的缩放。</p>
+  </blockquote>
+<p class="Decl5">Does Clipper handle polygons with holes?</p>
+
+  <p class="Decl4">'Holes' are defined by the specified <a href="../Units/ClipperLib/Types/PolyFillType.htm">polygon filling rule</a>. (See also <a href="../Units/ClipperLib/Classes/Clipper/Methods/Execute.htm">Clipper.Execute</a>)</p>
+<p class="Decl4">&nbsp;</p>
+  <p class="Decl5"> Clipper是否处理带孔的多边形？</p>
+  <blockquote>
+    <p>&ldquo;<span class="Decl4">Holes</span>（孔）&rdquo;由指定的<a href="../Units/ClipperLib/Types/PolyFillType.htm">多边形填充规则</a>定义。（参见<a href="../Units/ClipperLib/Classes/Clipper/Methods/Execute.htm">Clipper.Execute</a>）<br>
+    </p>
+  </blockquote>
+<p class="Decl5">Some polygons in the solution share a common edge. Is this a bug?</p>
+
+  <p class="Decl4"> No, though this should happen rarely as of version 6. (See <a href="../Units/ClipperLib/Classes/Clipper/Methods/Execute.htm">Clipper.Execute</a> for more about this.)<br></p>
+  <p class="Decl5">解决方案中的一些多边形共享一个共同的边。这是一个错误？</p>
+  <blockquote>
+    <p>不，虽然这应该很少发生版本6。（有关更多信息，请参阅<a href="../Units/ClipperLib/Classes/Clipper/Methods/Execute.htm">Clipper.Execute</a>。）</p>
+  </blockquote>
+  <p class="Decl4"><br> 
+  </p>
 
 
-  <p class="Decl5">Does Clipper handle polygons with holes?</p>
+<p class="Decl5">I have lots of polygons that I want to 'union'. Can I do this in one operation?</p>
 
-  <p class="Decl4">'Holes' are defined by the specified <a href="../Units/ClipperLib/Types/PolyFillType.htm">polygon filling rule</a>. (See also <a href="../Units/ClipperLib/Classes/Clipper/Methods/Execute.htm">Clipper.Execute</a>)<br><br> </p>
-
-
-  <p class="Decl5">Some polygons in the solution share a common edge. Is this a bug?</p>
-
-  <p class="Decl4"> No, though this should happen rarely as of version 6. (See <a href="../Units/ClipperLib/Classes/Clipper/Methods/Execute.htm">Clipper.Execute</a> for more about this.)<br><br> </p>
-
-
-  <p class="Decl5">I have lots of polygons that I want to 'union'. Can I do this in one operation?</p>
-
-  <p class="Decl4"> Yes. Just add all the polygons as subject polygons to the Clipper object. (You don't have to assign both subject and clip polygons.)<br><br> </p>
+  <p class="Decl4"> Yes. Just add all the polygons as subject polygons to the Clipper object. (You don't have to assign both subject and clip polygons.)<br></p>
+  <p class="Decl5">我有很多多边形，我想'union(联合，并集)'。我可以在一个操作中这样做吗？</p>
+  <blockquote>
+    <p>是。只需将所有多边形作为主题多边形添加到Clipper对象。（您不必同时指定主题和剪辑多边形。）</p>
+</blockquote>
+  <p class="Decl4"><br> 
+  </p>
 
 
-  <p class="Decl5"> <img src="../../Images/kangaroo_small.png" width="292" height="292" alt="" align="right"> The polygons produced by <a href="../Units/ClipperLib/Classes/ClipperOffset/_Body.htm">ClipperOffset</a> have tiny artefacts? Could this be a bug?</p>
+<p class="Decl5"> <img src="../../Images/kangaroo_small.png" width="292" height="292" alt="" align="right"> The polygons produced by <a href="../Units/ClipperLib/Classes/ClipperOffset/_Body.htm">ClipperOffset</a> have tiny artefacts? Could this be a bug?</p>
 
-  <p class="Decl4"> Make sure the input polygons don't self-intersect. Tiny self-intersections can sometimes be produced by previous clipping operations. These can be cleaned up using the <a href="../Units/ClipperLib/Functions/CleanPolygon.htm">CleanPolygon</a> and <a href="../Units/ClipperLib/Functions/CleanPolygons.htm">CleanPolygons</a> functions. Also, make sure the supplied polygons don't overlap. If they do, offset these separately. Finally, the precision of the input coordinates may be a problem. Because the Clipper Library only operates on integer coordinates, you may need to scale your coordinates (eg by a factor of 10) to improve precision. <br><br> </p>
+  <p class="Decl4"> Make sure the input polygons don't self-intersect. Tiny self-intersections can sometimes be produced by previous clipping operations. These can be cleaned up using the <a href="../Units/ClipperLib/Functions/CleanPolygon.htm">CleanPolygon</a> and <a href="../Units/ClipperLib/Functions/CleanPolygons.htm">CleanPolygons</a> functions. Also, make sure the supplied polygons don't overlap. If they do, offset these separately. Finally, the precision of the input coordinates may be a problem. Because the Clipper Library only operates on integer coordinates, you may need to scale your coordinates (eg by a factor of 10) to improve precision. <br></p>
+  <p class="Decl5"><a href="../Units/ClipperLib/Classes/ClipperOffset/_Body.htm">ClipperOffset</a>产生的多边形有微小的假象？这可能是一个错误？</p>
+  <blockquote>
+    <p>确保输入多边形不会自相交。有时可以通过先前的剪切操作来产生微小的自相交。这些可以使用<a href="../Units/ClipperLib/Functions/CleanPolygon.htm">CleanPolygon</a>和<a href="../Units/ClipperLib/Functions/CleanPolygons.htm">CleanPolygons</a>函数进行清理。此外，请确保提供的多边形不重叠。如果他们这样做，分别抵消这些。最后，输入坐标的精度可能是一个问题。因为Clipper库只对整数坐标操作，所以您可能需要缩放坐标（例如以10为因子）以提高精度。</p>
+  </blockquote>
+<p class="Decl4">&nbsp;</p>
+  <p class="Decl4"><br> 
+  </p>
 
 
-  <p class="Decl5">Is there an easy way to reverse polygon orientations?</p>
+<p class="Decl5">Is there an easy way to reverse polygon orientations?</p>
 
-  <p class="Decl4"> Yes, see <a href="../Units/ClipperLib/Functions/ReversePaths.htm">ReversePaths</a>. <br><br> </p>
+  <p class="Decl4"> Yes, see <a href="../Units/ClipperLib/Functions/ReversePaths.htm">ReversePaths</a>. </p>
+  <p class="Decl4">&nbsp;</p>
+  <p class="Decl5">有一个简单的方法来反转多边形方向？</p>
+  <blockquote>
+    <p>是，请参阅<a href="../Units/ClipperLib/Functions/ReversePaths.htm">ReversePaths</a>。</p>
+  </blockquote>
+  <p class="Decl4"><br>
+    <br> 
+  </p>
 
 <div style="clear:both">&nbsp;</div>
 
 
   <p class="Decl5">My drawings contain lots of beziers, ellipses and arcs. How can I perform clipping operations on these?</p>
 
-  <p class="Decl4"> You'll have to convert them to 'flattened' paths. For an example of how this can be done (and even reconstructed back into beziers, arcs etc), see the CurvesDemo application included in this library. <br><br> </p>
+  <p class="Decl4"> You'll have to convert them to 'flattened' paths. For an example of how this can be done (and even reconstructed back into beziers, arcs etc), see the CurvesDemo application included in this library. <br></p>
+<p class="Decl5">我的图纸包含许多贝塞尔曲线，椭圆和弧。如何对这些执行剪切操作？</p>
+  <blockquote>
+    <p>你必须将它们转换为&ldquo;flattened（平扁的）&rdquo;路径链表。有关如何完成此操作的示例（甚至重建回贝塞尔曲线，圆弧等），请参阅此库中包含的CurvesDemo（曲线Demo）应用程序。</p>
+  </blockquote>
+  <p class="Decl4"><br> 
+  </p>
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../Units/ClipperLib/Classes/Clipper/Methods/Execute.htm">Clipper.Execute</a>, <a href="../Units/ClipperLib/Classes/ClipperOffset/_Body.htm">ClipperOffset</a>, <a href="../Units/ClipperLib/Functions/CleanPolygon.htm">CleanPolygon</a>, <a href="../Units/ClipperLib/Functions/CleanPolygons.htm">CleanPolygons</a>, <a href="../Units/ClipperLib/Functions/ReversePaths.htm">ReversePaths</a>, <a href="../Units/ClipperLib/Types/PolyFillType.htm">PolyFillType</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../Units/ClipperLib/Classes/Clipper/Methods/Execute.htm">Clipper.Execute（执行）</a>, <a href="../Units/ClipperLib/Classes/ClipperOffset/_Body.htm">ClipperOffset（Clipper补偿）</a>, <a href="../Units/ClipperLib/Functions/CleanPolygon.htm">CleanPolygon（清除多边形“优化多边形”）</a>, <a href="../Units/ClipperLib/Functions/CleanPolygons.htm">CleanPolygons（清除多边形链表"优化多边形链表“）</a>, <a href="../Units/ClipperLib/Functions/ReversePaths.htm">ReversePaths（反转路径链表）</a>, <a href="../Units/ClipperLib/Types/PolyFillType.htm">PolyFillType（多边形填充类型）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

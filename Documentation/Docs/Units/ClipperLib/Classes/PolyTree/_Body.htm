@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../Scripts/jquery.js">
   </script>
     
@@ -51,13 +51,28 @@
     </tr>
   </table>
   <h1>PolyTree</h1>
-  <h2>Hierarchy</h2>
+  <h2>Hierarchy（层次）</h2>
   <p class="Hierarchy"></p>
   <p class="Hierarchy">&nbsp;&nbsp;&nbsp;|</p>
-  <p class="Hierarchy"><a href="../PolyNode/_Body.htm">PolyNode</a></p>
+  <p class="Hierarchy"><a href="../PolyNode/_Body.htm">PolyNode（多边形节点）</a></p>
 <br>
 
-  <p class="Body"> <b>PolyTree</b> is intended as a <b>read-only</b> data structure that should only be used to receive <em>solutions</em> from clipping and offsetting operations. It's an alternative to the <a href="../../Types/Paths.htm">Paths</a> data structure which also receives these solutions. PolyTree's two major advantages over the <em>Paths</em> structure are: it properly represents the <b>parent-child relationships</b> of the returned polygons; it differentiates between <b>open</b> and <b>closed</b> paths. However, since PolyTree is a more complex structure than the <em>Paths</em> structure, and since it's more computationally expensive to process (the Execute method being roughly 5-10% slower), <span class="maroon">it should used only be when parent-child polygon relationships are needed, or when open paths are being 'clipped'.</span><br><br> An empty PolyTree object can be passed as the <em>solution</em> parameter in <a href="../Clipper/Methods/Execute.htm"><b>Clipper.Execute</b></a> and in <a href="../ClipperOffset/Methods/Execute.htm"><b>ClipperOffset.Execute</b></a>. Once the clipping or offseting operation is completed, the method returns with the PolyTree structure filled with data representing the solution.<br><br> A <b>PolyTree</b> object is a container for any number of <a href="../PolyNode/_Body.htm"><b>PolyNode</b></a> children, with each contained PolyNode representing a single polygon contour (either an <a href="../../../../Overview/_Body.htm#terminology">outer</a> or <a href="../../../../Overview/_Body.htm#terminology">hole</a> polygon). <span class="maroon">PolyTree itself is a specialized PolyNode whose immediate children represent the top-level <em>outer</em> polygons of the solution. (Its own <a href="../PolyNode/Properties/Contour.htm">Contour</a> property is always empty.)</span> The contained top-level PolyNodes may contain their own PolyNode children representing hole polygons that may also contain children representing nested outer polygons etc. Children of <em>outers</em> will always be <em>holes</em>, and children of <em>holes</em> will always be <em>outers</em>.<br><br> <b>PolyTrees</b> can also contain <b>open</b> paths. Open paths will always be represented by <em>top level</em> PolyNodes. Two functions are provided to quickly separate out <em>open</em> and <em>closed</em> paths from a polytree - <a href="../../Functions/OpenPathsFromPolyTree.htm"><b>OpenPathsFromPolyTree</b></a> and <a href="../../Functions/ClosedPathsFromPolyTree.htm"><b>ClosedPathsFromPolyTree</b></a>. <br><br> <div align="left"> 
+  <p class="Body"> <b>PolyTree</b> is intended as a <b>read-only</b> data structure that should only be used to receive <em>solutions</em> from clipping and offsetting operations. It's an alternative to the <a href="../../Types/Paths.htm">Paths</a> data structure which also receives these solutions. PolyTree's two major advantages over the <em>Paths</em> structure are: it properly represents the <b>parent-child relationships</b> of the returned polygons; it differentiates between <b>open</b> and <b>closed</b> paths. However, since PolyTree is a more complex structure than the <em>Paths</em> structure, and since it's more computationally expensive to process (the Execute method being roughly 5-10% slower), <span class="maroon">it should used only be when parent-child polygon relationships are needed, or when open paths are being 'clipped'.</span>
+  <p class="Body"><strong>PolyTree</strong>的目的是作为<strong>只读</strong>应该只用于接收的数据结构<em>解决方案</em>，从削波和抵消操作。它是<a href="../../Types/Paths.htm">Paths</a>数据结构的替代，它也接收这些解决方案。PolyTree相对于<em>Paths</em>结构的两个主要优点是：它正确地表示返回多边形<strong>的父子关系</strong> ; 它区分<strong>开路</strong>和<strong>闭路</strong>。然而，由于PolyTree是一个比<em>Paths</em>结构更复杂的结构，并且由于处理计算量更大（Execute方法的速度大约5-10％），它只应在需要父子多边形关系时，或当正在剪切开放路径时使用。  
+  <p class="Body"><br>
+  <br> An empty PolyTree object can be passed as the <em>solution</em> parameter in <a href="../Clipper/Methods/Execute.htm"><b>Clipper.Execute</b></a> and in <a href="../ClipperOffset/Methods/Execute.htm"><b>ClipperOffset.Execute</b></a>. Once the clipping or offseting operation is completed, the method returns with the PolyTree structure filled with data representing the solution.
+  <p class="Body">
+  <p class="Body">空PolyTree对象可以作为传递<em>解决方案</em>在参数<a href="../Clipper/Methods/Execute.htm"><strong>Clipper.Execute</strong></a>和<a href="../ClipperOffset/Methods/Execute.htm"><strong>ClipperOffset.Execute</strong></a>。一旦剪切或者偏移操作完成，该方法返回用填充有表示该解的数据的PolyTree结构。<br>
+    <br> A <b>PolyTree</b> object is a container for any number of <a href="../PolyNode/_Body.htm"><b>PolyNode</b></a> children, with each contained PolyNode representing a single polygon contour (either an <a href="../../../../Overview/_Body.htm#terminology">outer</a> or <a href="../../../../Overview/_Body.htm#terminology">hole</a> polygon). <span class="maroon">PolyTree itself is a specialized PolyNode whose immediate children represent the top-level <em>outer</em> polygons of the solution. (Its own <a href="../PolyNode/Properties/Contour.htm">Contour</a> property is always empty.)</span> The contained top-level PolyNodes may contain their own PolyNode children representing hole polygons that may also contain children representing nested outer polygons etc. Children of <em>outers</em> will always be <em>holes</em>, and children of <em>holes</em> will always be <em>outers</em>.
+  <p class="Body">
+  <p class="Body">一个<strong>PolyTree</strong>对象为任何数目的容器<a href="../PolyNode/_Body.htm"><strong>PolyNode</strong></a>儿童，与代表一个多边形轮廓（可以是各含有PolyNode <a href="../../../../Overview/_Body.htm#terminology">外</a>或<a href="../../../../Overview/_Body.htm#terminology">孔</a>多边形）。PolyTree本身是一个专门的PolyNode，其直接子代表解决方案的顶层<em>外部</em>多边形。（自有<a href="../PolyNode/Properties/Contour.htm">轮廓</a>属性始终是空的。）所包含的顶级PolyNodes可能包含自己的孩子PolyNode代表也可能包含表示嵌套的外多边形等儿童儿童多边形孔<em>，外表面</em>将永远是<em>孔</em>和儿童<em>孔</em>总会是<em>外出</em>。<br>
+    <br> <b>PolyTrees</b> can also contain <b>open</b> paths. Open paths will always be represented by <em>top level</em> PolyNodes. Two functions are provided to quickly separate out <em>open</em> and <em>closed</em> paths from a polytree - <a href="../../Functions/OpenPathsFromPolyTree.htm"><b>OpenPathsFromPolyTree</b></a> and <a href="../../Functions/ClosedPathsFromPolyTree.htm"><b>ClosedPathsFromPolyTree</b></a>. 
+  <p class="Body">
+  <p class="Body"><strong>PolyTrees</strong>也可以包含<strong>开放</strong>路径。打开路径将始终由<em>顶层</em> PolyNodes代表。
+  <p class="Body">两功能提供了快速分离出开放和封闭路径从树上- <a href="../../Functions/OpenPathsFromPolyTree.htm">openpathsfrompolytree</a>和<a href="../../Functions/ClosedPathsFromPolyTree.htm">closedpathsfrompolytree</a>。  
+  <p class="Body"><br>
+    <br>                     
+  <div align="left"> 
       <table cellspacing="2" cellpadding="0" border="0">
 
         <tr>
@@ -99,59 +114,51 @@
 
       </table> </div> </p>
 
-  <h2 id="Auto-Reference">Reference</h2>
+  <h2 id="Auto-Reference">Reference（参考）</h2>
   <table>
-    <tr><th>Fields
-      </th><th>Methods
-      </th><th>Properties
+    <tr>
+      <th>Fields
+      （字段）</th>
+      <th>Methods（方法）
+      </th>
+      <th>Properties（属性）
       </th>
     </tr>
     <tr>
-      <td colspan="2" class="White">In PolyTree:
+      <td colspan="2" class="White">In PolyTree（在PolyTree中）:
       </td>
     </tr>
     <tr>
       <td>
       </td>
-      <td><a href="Methods/Clear.htm">Clear</a>
-      </td>
-      <td><a href="Properties/Total.htm">Total</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-      </td>
-      <td><a href="Methods/GetFirst.htm">GetFirst</a>
-      </td>
-      <td>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" class="White">In PolyNode:
+      <td><a href="Methods/Clear.htm">Clear（清空）</a></td>
+      <td><a href="Properties/Total.htm">Total（总计）</a>
       </td>
     </tr>
     <tr>
       <td>
       </td>
-      <td><a href="../PolyNode/Methods/GetNext.htm">GetNext</a>
+      <td><a href="Methods/GetFirst.htm">GetFirst（得到上一个节点）</a>
       </td>
-      <td><a href="../PolyNode/Properties/ChildCount.htm">ChildCount</a>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="White">In PolyNode（在PolyNode中）:
       </td>
     </tr>
     <tr>
       <td>
       </td>
-      <td>
-      </td>
-      <td><a href="../PolyNode/Properties/Childs.htm">Childs</a>
-      </td>
+      <td><a href="../PolyNode/Methods/GetNext.htm">GetNext（得到下一个节点）</a></td>
+      <td><a href="../PolyNode/Properties/ChildCount.htm">ChildCount（子类的数量）</a></td>
     </tr>
     <tr>
       <td>
       </td>
       <td>
       </td>
-      <td><a href="../PolyNode/Properties/Contour.htm">Contour</a>
+      <td><a href="../PolyNode/Properties/Childs.htm">Childs（子类的链表）</a>
       </td>
     </tr>
     <tr>
@@ -159,7 +166,7 @@
       </td>
       <td>
       </td>
-      <td><a href="../PolyNode/Properties/IsHole.htm">IsHole</a>
+      <td><a href="../PolyNode/Properties/Contour.htm">Contour（轮廓）</a>
       </td>
     </tr>
     <tr>
@@ -167,7 +174,7 @@
       </td>
       <td>
       </td>
-      <td><a href="../PolyNode/Properties/IsOpen.htm">IsOpen</a>
+      <td><a href="../PolyNode/Properties/IsHole.htm">IsHole（是孔）</a>
       </td>
     </tr>
     <tr>
@@ -175,12 +182,19 @@
       </td>
       <td>
       </td>
-      <td><a href="../PolyNode/Properties/Parent.htm">Parent</a>
+      <td><a href="../PolyNode/Properties/IsOpen.htm">IsOpen（是开放的）</a>
       </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td><a href="../PolyNode/Properties/Parent.htm">Parent（父类“返回父类指针”）</a></td>
     </tr>
   </table>
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../../../../Overview/_Body.htm">Overview</a>, <a href="../Clipper/Methods/Execute.htm">Clipper.Execute</a>, <a href="../ClipperOffset/Methods/Execute.htm">ClipperOffset.Execute</a>, <a href="../PolyNode/_Body.htm">PolyNode</a>, <a href="../../Functions/ClosedPathsFromPolyTree.htm">ClosedPathsFromPolyTree</a>, <a href="../../Functions/OpenPathsFromPolyTree.htm">OpenPathsFromPolyTree</a>, <a href="../../Types/Paths.htm">Paths</a></p>
+  <h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../../../Overview/_Body.htm">Overview（概观）</a>, <a href="../Clipper/Methods/Execute.htm">Clipper.Execute（Clipper.执行）</a>, <a href="../ClipperOffset/Methods/Execute.htm">ClipperOffset.Execute（ClipperOffset.执行）</a>, <a href="../PolyNode/_Body.htm">PolyNode（多边形节点）</a>, <a href="../../Functions/ClosedPathsFromPolyTree.htm">ClosedPathsFromPolyTree（闭合的路径列表从PolyTree生成）</a>, <a href="../../Functions/OpenPathsFromPolyTree.htm">OpenPathsFromPolyTree（开放的）</a>, <a href="../../Types/Paths.htm">Paths（路径列表）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

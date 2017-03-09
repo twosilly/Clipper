@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../Scripts/jquery.js">
   </script>
     
@@ -51,47 +51,45 @@
     </tr>
   </table>
   <h1>Clipper</h1>
-  <h2>Hierarchy</h2>
+  <h2>Hierarchy(分层)</h2>
   <p class="Hierarchy"></p>
   <p class="Hierarchy">&nbsp;&nbsp;&nbsp;|</p>
   <p class="Hierarchy"><a href="../ClipperBase/_Body.htm">ClipperBase</a></p>
 <br>
 
-  <p class="Body"> The <b>Clipper</b> class encapsulates <a href="../../Types/ClipType.htm">boolean operations on polygons</a> (intersection, union, difference and XOR), which is also called <a href="../../../../Overview/_Body.htm#terminology">polygon clipping</a>.<br><br> Input polygons, both <em>subject</em> and <em>clip</em> sets, are passed to a Clipper object by its <a href="../ClipperBase/Methods/AddPath.htm">AddPath</a> and <a href="../ClipperBase/Methods/AddPaths.htm">AddPaths</a> methods, and the clipping operation is performed by calling its <a href="./Methods/Execute.htm">Execute</a> method. Multiple boolean operations can be performed on the same input polygon sets by repeat calls to Execute.<br><br> </p>
+  <p class="Body"> The <b>Clipper</b> class encapsulates <a href="../../Types/ClipType.htm">boolean operations on polygons</a> (intersection, union, difference and XOR), which is also called <a href="../../../../Overview/_Body.htm#terminology">polygon clipping</a>.<br></p>
+  <p class="Body">该<b>Clipper</b>类封装<a href="../../Types/ClipType.htm">的多边形布尔运算</a>（交，并，差和异或），也被称为<a href="../../../../Overview/_Body.htm#terminology">多边形裁剪</a>。</p>
+  <p class="Body"><br> 
+  Input polygons, both <em>subject</em> and <em>clip</em> sets, are passed to a Clipper object by its <a href="../ClipperBase/Methods/AddPath.htm">AddPath</a> and <a href="../ClipperBase/Methods/AddPaths.htm">AddPaths</a> methods, and the clipping operation is performed by calling its <a href="./Methods/Execute.htm">Execute</a> method. Multiple boolean operations can be performed on the same input polygon sets by repeat calls to Execute.<br><br> 
+  输入多边形（包括<em>subject（主题</em>）和<em>clip（剪辑）</em>集）通过<a href="../ClipperBase/Methods/AddPath.htm">AddPath</a>和<a href="../ClipperBase/Methods/AddPaths.htm">AddPaths</a>方法传递到Clipper对象，并且通过调用其<a href="./Methods/Execute.htm">Execute</a>方法<a href="./Methods/Execute.htm">执行</a>剪切操作。通过重复调用Execute，可以对相同的输入多边形集合执行多个布尔运算</p>
 
-  <h2 id="Auto-Reference">Reference</h2>
+<h2 id="Auto-Reference">Reference（参考）</h2>
   <table>
-    <tr><th>Fields
-      </th><th>Methods
-      </th><th>Properties
+    <tr>
+      <th width="127">Fields（字段）
       </th>
+      <th width="209">Methods
+      （方法）</th>
+      <th width="273">Properties
+      （属性）</th>
     </tr>
     <tr>
-      <td colspan="2" class="White">In Clipper:
-      </td>
-    </tr>
-    <tr>
-      <td>
-      </td>
-      <td><a href="Methods/Constructor.htm">Constructor</a>
-      </td>
-      <td><a href="Properties/PreserveCollinear.htm">PreserveCollinear</a>
-      </td>
+      <td colspan="2" class="White"><p>In Clipper:
+      （在Clipper中：）</p></td>
     </tr>
     <tr>
       <td>
       </td>
-      <td><a href="Methods/Execute.htm">Execute</a>
-      </td>
-      <td><a href="Properties/ReverseSolution.htm">ReverseSolution</a>
+      <td><a href="Methods/Constructor.htm">Constructor（构造函数）</a></td>
+      <td><a href="Properties/PreserveCollinear.htm">PreserveCollinear（保留线性）</a>
       </td>
     </tr>
     <tr>
       <td>
       </td>
-      <td>
+      <td><a href="Methods/Execute.htm">Execute（执行）</a>
       </td>
-      <td><a href="Properties/StrictlySimple.htm">StrictlySimple</a>
+      <td><a href="Properties/ReverseSolution.htm">ReverseSolution（反向解）</a>
       </td>
     </tr>
     <tr>
@@ -99,25 +97,25 @@
       </td>
       <td>
       </td>
-      <td><a href="Properties/ZFillFunction.htm">ZFillFunction</a>
+      <td><a href="Properties/StrictlySimple.htm">StrictlySimple（完全简单）</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td><a href="Properties/ZFillFunction.htm">ZFillFunction（Z轴填充回调函数）</a>
       </td>
     </tr>
     <tr>
       <td colspan="2" class="White">In ClipperBase:
-      </td>
+      （在ClipperBase中：）</td>
     </tr>
     <tr>
       <td>
       </td>
-      <td><a href="../ClipperBase/Methods/AddPath.htm">AddPath</a>
-      </td>
-      <td>
-      </td>
-    </tr>
-    <tr>
-      <td>
-      </td>
-      <td><a href="../ClipperBase/Methods/AddPaths.htm">AddPaths</a>
+      <td><a href="../ClipperBase/Methods/AddPath.htm">AddPath(添加路径)</a>
       </td>
       <td>
       </td>
@@ -125,7 +123,7 @@
     <tr>
       <td>
       </td>
-      <td><a href="../ClipperBase/Methods/Clear.htm">Clear</a>
+      <td><a href="../ClipperBase/Methods/AddPaths.htm">AddPaths（添加路径链表）</a>
       </td>
       <td>
       </td>
@@ -133,14 +131,22 @@
     <tr>
       <td>
       </td>
-      <td><a href="../ClipperBase/Methods/GetBounds.htm">GetBounds</a>
+      <td><a href="../ClipperBase/Methods/Clear.htm">Clear（清空）</a>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td><a href="../ClipperBase/Methods/GetBounds.htm">GetBounds（得到边界）</a>
       </td>
       <td>
       </td>
     </tr>
   </table>
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../../../../Overview/_Body.htm">Overview</a>, <a href="../../Types/ClipType.htm">ClipType</a></p>
+  <h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../../../Overview/_Body.htm">Overview（概观）</a>, <a href="../../Types/ClipType.htm">ClipType（Clip类型）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

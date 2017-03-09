@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../Scripts/jquery.js">
   </script>
     
@@ -48,7 +48,7 @@
       </td>
     </tr>
   </table>
-  <h1>MinkowskiDiff</h1>
+  <h1>MinkowskiDiff（Minkowski的差异）</h1>
 
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>function</b> MinkowskiDiff(<b>const</b> Poly1: TPath; <b>const</b> Poly2: TPath): TPaths;</p>
@@ -59,13 +59,19 @@
 <br>
 
 
-  <p class="Body"> <img src="../../../../Images/minkowski2.png" alt="" border="0" align="right"> <b>Minkowski Difference</b> is performed by <em>subtracting</em> each point in a polygon from the set of points in an open or closed path. A key feature of Minkowski Difference is that when it's applied to two polygons, the resulting polygon will contain the coordinate space origin whenever the two polygons touch or overlap. (This function is often used to determine when polygons collide.)<br><br> <em>In the image on the left the blue polygon is the 'minkowski difference' of the two red boxes. The black dot represents the coordinate space origin.</em> </p>
+  <p class="Body"> <img src="../../../../Images/minkowski2.png" alt="" border="0" align="right"> <b>Minkowski Difference</b> is performed by <em>subtracting</em> each point in a polygon from the set of points in an open or closed path. A key feature of Minkowski Difference is that when it's applied to two polygons, the resulting polygon will contain the coordinate space origin whenever the two polygons touch or overlap. (This function is often used to determine when polygons collide.)<br>
+  </p>
+  <p class="Body"><strong>Minkowski差异</strong>通过从开放或封闭路径中的点集合中<em>减去</em>多边形中的每个点来执行。Minkowski差异的一个关键特征是，当它应用于两个多边形时，每当两个多边形接触或重叠时，结果多边形将包含坐标空间原点。（此函数通常用于确定何时多边形碰撞。）</p>
+  <p class="Body"><br> 
+    <em>In the image on the left the blue polygon is the 'minkowski difference' of the two red boxes. The black dot represents the coordinate space origin.</em></p>
+  <p class="Body">&nbsp;</p>
+  <p class="Body"><em>在左侧的图像中，蓝色多边形是两个红色框的&ldquo;minkowski差异&rdquo;。黑点表示坐标空间原点。</em> </p>
 
 
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="MinkowskiSum.htm">MinkowskiSum</a>, <a href="../Types/Path.htm">Path</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="MinkowskiSum.htm">MinkowskiSum（Minkowski总数）</a>, <a href="../Types/Path.htm">Path（路径）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

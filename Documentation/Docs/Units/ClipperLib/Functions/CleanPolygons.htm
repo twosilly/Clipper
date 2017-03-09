@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../Scripts/jquery.js">
   </script>
     
@@ -48,7 +48,7 @@
       </td>
     </tr>
   </table>
-  <h1>CleanPolygons</h1>
+  <h1>CleanPolygons（清除多边形链表）</h1>
 
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>function</b> CleanPolygons(<b>const</b> Polys: TPaths; Distance: double = 1.415): TPaths;</p>
@@ -72,13 +72,41 @@
 
     </ul> </p>
 
-  <p class="Body"> Vertices are <em>semi-adjacent</em> when they are separated by a single (out-lying) vertex.<br><br> The <em>distance</em> parameter's default value is approximately &radic;2 so that a vertex will be removed when adjacent or semi-adjacent vertices having their corresponding X and Y coordinates differing by no more than 1 unit. (If the egdes are semi-adjacent the out-lying vertex will be removed too.)<br><br> C++ only: This function is overloaded. In the first definition, the <em>in_polys</em> and <em>out_polys</em> parameters can reference the same <em>Paths</em> object though in that case the calling code might be clearer if the second definition (accepting a single <em>Paths</em> parameter) is used.<br><br> <img src="../../../../Images/clean1.png" alt="" border="0">&nbsp;&nbsp;&nbsp; <img src="../../../../Images/clean2.png" alt="" border="0"> </p>
+  <blockquote>
+    <p>删除顶点：</p>
+      <ul>
+        <li>连接co-linear（共线性）边缘或接合几乎共线的边缘（使得如果顶点移动不超过指定距离，则边缘将是共线性的）</li>
+        <li>其在相邻顶点的指定距离内</li>
+        <li>其位于半相邻顶点的指定距离内以及它们的外侧顶点</li>
+      </ul>
+    <p>/*</p>
+      <p>时间：2017年3月8日09:33:11</p>
+      <p>内容：删除几乎成直线的点，</p>
+      <p> 说是清除，我更愿意叫这个函数为优化！优化多边形，去除其中的多余点！累赘点！</p>
+      <p>作者：TwoSilly</p>
+      <p>*/</p>
+</blockquote>
+<p>&nbsp;</p>
+<p class="Body"> Vertices are <em>semi-adjacent</em> when they are separated by a single (out-lying) vertex.<br>
+</p>
+<p class="Body">&nbsp;</p>
+<p class="Body">顶点<em>semi-adjacent（部分相邻</em>，）当他们由一个（out-lying（撒谎））顶点分离。</p>
+<p class="Body"><br> 
+  The <em>distance</em> parameter's default value is approximately &radic;2 so that a vertex will be removed when adjacent or semi-adjacent vertices having their corresponding X and Y coordinates differing by no more than 1 unit. (If the egdes are semi-adjacent the out-lying vertex will be removed too.)<br>
+</p>
+<p class="Body">的<em>距离</em>参数的默认值是约√2使得顶点将被移除时具有其相应的X和Y坐标由不超过1个单位的不同相邻或半相邻顶点。（如果egdes是半邻接的，则外侧顶点也将被移除。）</p>
+<p class="Body"><br> 
+  C++ only: This function is overloaded. In the first definition, the <em>in_polys</em> and <em>out_polys</em> parameters can reference the same <em>Paths</em> object though in that case the calling code might be clearer if the second definition (accepting a single <em>Paths</em> parameter) is used.<br>
+</p>
+<p class="Body">仅C ++：此函数重载。在第一个定义中，<em>in_polys</em>和<em>out_polys</em>参数可以引用相同的<em>Paths</em>对象，尽管在这种情况下，如果使用第二个定义（接受单个<em>Paths</em>参数），调用代码可能更清晰。</p>
+<p class="Body"><br> 
+  <img src="../../../../Images/clean1.png" alt="" border="0">&nbsp;&nbsp;&nbsp; <img src="../../../../Images/clean2.png" alt="" border="0"> </p>
 
 
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="CleanPolygon.htm">CleanPolygon</a>, <a href="SimplifyPolygons.htm">SimplifyPolygons</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="CleanPolygon.htm">CleanPolygon（清除多边形）</a>, <a href="SimplifyPolygons.htm">SimplifyPolygons（简单多边形链表）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

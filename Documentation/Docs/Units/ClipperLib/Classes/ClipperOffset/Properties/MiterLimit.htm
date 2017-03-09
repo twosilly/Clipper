@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,10 +50,10 @@
       </td>
     </tr>
   </table>
-  <h1>ClipperOffset.MiterLimit</h1>
+  <h1>ClipperOffset.MiterLimit（尖角限量）</h1>
 
 
-  <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>property</b> MiterLimit: double; <span class="Comment">//read and write</span></p>
+<p class="Decl"><span class="Comment">Del.&raquo;</span> <b>property</b> MiterLimit: double; <span class="Comment">//read and write</span></p>
 
   <p class="Decl2"><span class="Comment"> C++&nbsp;&raquo;</span> <b>double</b> MiterLimit;</p>
 
@@ -61,12 +61,24 @@
 <br>
 
 
-  <p class="Body"> This property sets the maximum distance <em>in multiples of delta</em> that vertices can be offset from their original positions before squaring is applied. (Squaring truncates a miter by 'cutting it off' at 1 &times; delta distance from the original vertex.)<br><br> <b>The default value for MiterLimit is 2</b> (ie twice delta). This is also the smallest MiterLimit that's allowed. If mitering was unrestricted (ie without any squaring), then offsets at very acute angles would generate unacceptably long 'spikes'.<br><br> An example of an offsetting 'spike' at a narrow angle that's a consequence of using a large MiterLimit (25) ...<br> <img src="../../../../../../Images/miterlimit.png" alt="" border="0"> </p>
+  <p class="Body"> This property sets the maximum distance <em>in multiples of delta</em> that vertices can be offset from their original positions before squaring is applied. (Squaring truncates a miter by 'cutting it off' at 1 &times; delta distance from the original vertex.)<br>
+  </p>
+  <p class="Body">此属性设置的最大距离<em>在三角洲的倍数</em>的顶点可以从原来的位置应用平方之前所抵消。（磨边截断在从原始顶点1×增量距离斜切通过&ldquo;切割它关闭&rdquo;。）</p>
+  <p class="Body"><br> 
+  <b>The default value for MiterLimit is 2</b> (ie twice delta). This is also the smallest MiterLimit that's allowed. If mitering was unrestricted (ie without any squaring), then offsets at very acute angles would generate unacceptably long 'spikes'.<br>
+  </p>
+  <p class="Body"><strong>对于miterlimit默认值为2（即两次三角洲）</strong>这也是允许的最小的miterLimit分别。如果斜角是不受限制的（即没有任何平方），然后在非常尖锐的角偏移会产生非常长'尖峰'。</p>
+  <p class="Body">&nbsp;</p>
+  <p class="Body"><br> 
+  An example of an offsetting 'spike' at a narrow angle that's a consequence of using a large MiterLimit (25) ...</p>
+<p class="Body">&nbsp;</p>
+  <p class="Body">在一个狭窄的角度，是一种利用大miterlimit后果抵消'尖角'例（25）…<br> 
+    <img src="../../../../../../Images/miterlimit.png" alt="" border="0"> </p>
 
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../../../Types/JoinType.htm">JoinType</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../../Types/JoinType.htm">JoinType（链接类型）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

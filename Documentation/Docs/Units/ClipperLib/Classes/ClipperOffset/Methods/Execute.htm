@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,7 +50,7 @@
       </td>
     </tr>
   </table>
-  <h1>ClipperOffset.Execute</h1>
+  <h1>ClipperOffset.Execute（执行）</h1>
 
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>procedure</b> Execute(<b>out</b> solution: TPaths; Delta: Double); <b>overload</b>;</p>
@@ -68,10 +68,16 @@
 <br>
 
 
-  <p class="Body"> This method takes two parameters. The first is the structure that receives the result of the offset operation (either a PolyTree or a Paths structure). The second parameter is the amount to which the supplied paths will be offset. Negative delta values shrink polygons and positive delta expand them.<br><br> This method can be called multiple times, offsetting the same paths by different amounts (ie using different deltas).<br><br> <img src="../../../../../../Images/offset1.png" alt="" width="310" height="314" border="0" align="right"> 
-    <table cellspacing="0" cellpadding="0" border="0" align="left" style="margin: 0;" width="560px">
+  <p class="Body"> This method takes two parameters. The first is the structure that receives the result of the offset operation (either a PolyTree or a Paths structure). The second parameter is the amount to which the supplied paths will be offset. Negative delta values shrink polygons and positive delta expand them.<br>  
+<p class="Body">此方法需要两个参数。第一种是接收偏移操作（PolyTree或Paths结构）的结果的结构。第二个参数是提供的路径将被偏移的量。负delta值收缩多边形，正delta扩展它们。  
+  <p class="Body"><br> 
+This method can be called multiple times, offsetting the same paths by different amounts (ie using different deltas).  
+<p class="Body">  
+  <p class="Body">该方法可以被多次调用，以相同的路径偏移不同的量（即使用不同的增量）。<br>
+    <br> <img src="../../../../../../Images/offset1.png" alt="" width="310" height="314" border="0" align="right"> 
+<table cellspacing="0" cellpadding="0" border="0" align="left" style="margin: 0;" width="560px">
 
-      <tr>
+<tr>
         <td class="White">
 
           <pre class="brush: cpp;">

@@ -48,7 +48,7 @@
       </td>
     </tr>
   </table>
-  <h1>EndType</h1>
+  <h1>EndType（终端，结束类型）</h1>
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>type</b> TEndType = (etClosedPolygon, etClosedLine, etOpenSquare, etOpenRound, etOpenButt);</p>
 
@@ -75,11 +75,25 @@
     </ul> </p>
 
 
-  <p class="Body"> Note: With <em>etClosedPolygon</em> and <em>etClosedLine</em> types, the path closure will be the same regardless of whether or not the first and last vertices in the path match.<br><br> <img src="../../../../Images/endtypes1.png" alt="" border="0"><br> <img src="../../../../Images/endtypes2.png" alt="" border="0"><br> <br>   </p>
+  <blockquote>
+      <p>EndType枚举器有5个值：</p>
+      <ul>
+        <li><strong>etClosedPolygon：</strong>使用JoinType值和填充为多边形的路径连接结束</li>
+        <li><strong>etClosedLine：</strong>使用JoinType值和填充为折线的路径连接结束</li>
+        <li><strong>正方形：</strong>端部是<em>平方</em>和延长的<strong>delta</strong>单位</li>
+        <li><strong>etOpenRound：</strong>结束<em>四舍五入</em>和扩展的<strong>增量</strong>单位</li>
+        <li><strong>etOpenButt：</strong>结束被平方没有扩展。</li>
+        <li><strong>etOpenSingle：</strong>在单个方向上偏移开放路径。计划以后更新。</li>
+      </ul>
+</blockquote>
+<p class="Body"> Note: With <em>etClosedPolygon</em> and <em>etClosedLine</em> types, the path closure will be the same regardless of whether or not the first and last vertices in the path match.</p>
+<p class="Body">注意：使用<em>etClosedPolygon</em>和<em>etClosedLine</em>类型，无论路径中的第一个和最后一个顶点是否匹配，路径闭合都将是相同的。<br>
+  <br> <img src="../../../../Images/endtypes1.png" alt="" border="0"><br> <img src="../../../../Images/endtypes2.png" alt="" border="0"><br> <br>   
+</p>
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../Classes/ClipperOffset/Methods/AddPath.htm">ClipperOffset.AddPath</a>, <a href="../Classes/ClipperOffset/Methods/AddPaths.htm">ClipperOffset.AddPaths</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../Classes/ClipperOffset/Methods/AddPath.htm">ClipperOffset.AddPath（Clipper偏移.添加路径）</a>, <a href="../Classes/ClipperOffset/Methods/AddPaths.htm">ClipperOffset.AddPaths（Clipper偏移.添加路径链表）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

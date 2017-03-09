@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+     <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,13 +50,26 @@
       </td>
     </tr>
   </table>
-  <h1>ClipperOffset</h1>
+  <h1>ClipperOffset（Clipper补偿）</h1>
 <br>
 
-  <p class="Body">The ClipperOffset class encapsulates the process of offsetting (inflating/deflating) both open and closed paths using a number of different join types and end types.<br><br> <em>(This class replaces the now deprecated OffsetPaths function which was less flexible.)</em><br><br> <b>Preconditions for offsetting:</b><br> 1. The orientations of closed paths must be consistent such that outer polygons share the same orientation, and any holes have the opposite orientation (ie non-zero filling). Open paths must be oriented with closed outer polygons.<br> 2. Polygons must not self-intersect. <br><br> <b>Limitations:</b><br> When offsetting, small artefacts may appear where polygons overlap. To avoid these artefacts, offset overlapping polygons separately.<br><br><br> <img src="../../../../../Images/offset1.png" alt="" width="310" height="314" border="0" align="right"> 
-    <table cellspacing="0" cellpadding="0" border="0" align="left" style="margin: 0;" width="560px">
+  <p class="Body">The ClipperOffset class encapsulates the process of offsetting (inflating/deflating) both open and closed paths using a number of different join types and end types.<br><br> <em>(This class replaces the now deprecated OffsetPaths function which was less flexible.)</em><br>  
+<p class="Body">ClipperOffset类封装了使用许多不同的连接类型和结束类型来对开放路径和封闭路径进行偏移（膨胀/缩小）的过程。<br>
+  <br>
+<em>（这个类替换现在已经过时的不太灵活的OffsetPaths函数。）</em>  
+  <p class="Body"><br> 
+<b>Preconditions for offsetting:</b><br> 1. The orientations of closed paths must be consistent such that outer polygons share the same orientation, and any holes have the opposite orientation (ie non-zero filling). Open paths must be oriented with closed outer polygons.<br> 2. Polygons must not self-intersect.   
+<p class="Body">  
+  <p class="Body"><strong>偏移的前提条件：</strong><br>
+    1.闭合路径的方向必须一致，使得外多边形共享相同的方向，并且任何空洞具有相反的方向（即非零填充）。开放路径必须以封闭的外部多边形定向。<br>
+    2.多边形不能自相交。<br>
+<br> <b>Limitations:</b><br> When offsetting, small artefacts may appear where polygons overlap. To avoid these artefacts, offset overlapping polygons separately.<br>  
+  <p class="Body"><strong>限制：</strong><br>
+    当偏移时，多边形重叠的地方可能会出现小的假象。为了避免这些假象，分别偏移重叠的多边形。<br>
+    <br> <img src="../../../../../Images/offset1.png" alt="" width="310" height="314" border="0" align="right"> 
+<table cellspacing="0" cellpadding="0" border="0" align="left" style="margin: 0;" width="560px">
 
-      <tr>
+<tr>
         <td class="White">
 
           <pre class="brush: cpp;">
@@ -87,26 +100,27 @@ int main()
 
     </table> <div style="clear:both">&nbsp;</div> </p>
 
-  <h2 id="Auto-Reference">Reference</h2>
+  <h2 id="Auto-Reference">Reference（参考）</h2>
   <table>
-    <tr><th>Methods
-      </th><th>Properties
+    <tr>
+      <th>Methods
+      （方法）</th>
+      <th>Properties（属性）
       </th>
     </tr>
     <tr>
-      <td colspan="2" class="White">In ClipperOffset:
+      <td colspan="2" class="White">In ClipperOffset（在ClipperOffset中）:
       </td>
     </tr>
     <tr>
       <td><a href="Methods/AddPath.htm">AddPath</a>
       </td>
-      <td><a href="Properties/ArcTolerance.htm">ArcTolerance</a>
-      </td>
+      <td><a href="Properties/ArcTolerance.htm">ArcTolerance（弧度的公差）</a></td>
     </tr>
     <tr>
       <td><a href="Methods/AddPaths.htm">AddPaths</a>
       </td>
-      <td><a href="Properties/MiterLimit.htm">MiterLimit</a>
+      <td><a href="Properties/MiterLimit.htm">MiterLimit（尖角限量）</a>
       </td>
     </tr>
     <tr>
@@ -117,7 +131,7 @@ int main()
     </tr>
     <tr>
       <td><a href="Methods/Constructor.htm">Constructor</a>
-      </td>
+      （构造函数）</td>
       <td>
       </td>
     </tr>

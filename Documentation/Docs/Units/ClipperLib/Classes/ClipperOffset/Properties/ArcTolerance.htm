@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,7 +50,7 @@
       </td>
     </tr>
   </table>
-  <h1>ClipperOffset.ArcTolerance</h1>
+  <h1>ClipperOffset.ArcTolerance（弧度的公差）</h1>
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>property</b> ArcTolerance: double; <span class="Comment">//read and write</span></p>
 
@@ -59,15 +59,43 @@
   <p class="Decl3"><span class="Comment">C#&nbsp;&nbsp;&raquo;</span> <b>public double</b> ArcTolerance {get; set;}</p>
 <br>
 
-  <p class="Body"> Firstly, this field/property is only relevant when JoinType = jtRound and/or EndType = etRound.<br><br> Since flattened paths can never perfectly represent arcs, this field/property specifies a maximum acceptable imprecision ('tolerance') when arcs are approximated in an offsetting operation. Smaller values will increase 'smoothness' up to a point though at a cost of performance and in creating more vertices to construct the arc.<br><br> The default ArcTolerance is 0.25 units. This means that the maximum distance the flattened path will deviate from the 'true' arc will be no more than 0.25 units (before rounding).<br><br> <span class="maroon">Reducing tolerances below 0.25 will <b>not</b> improve smoothness since vertex coordinates will still be rounded to integer values.</span> The only way to achieve sub-integer precision is through coordinate scaling before and after offsetting (see example below).<br><br> <span class="maroon">It's important to make ArcTolerance a sensible fraction of the offset delta (arc radius)</span>. Large tolerances relative to the offset delta will produce poor arc approximations but, just as importantly, very small tolerances will substantially slow offsetting performance while providing unnecessary degrees of precision. This is most likely to be an issue when offsetting polygons whose coordinates have been scaled to preserve floating point precision.<br><br> <b>Example:</b> Imagine a set of polygons (defined in floating point coordinates) that is to be offset by 10 units using <em>round</em> joins, and the solution is to retain floating point precision up to at least 6 decimal places.<br> To preserve this degree of floating point precision, and given that Clipper and ClipperOffset both operate on integer coordinates, the polygon coordinates will be scaled up by 10<sup>8
+  <p class="Body"> Firstly, this field/property is only relevant when JoinType = jtRound and/or EndType = etRound.<br>
+  </p>
+  <p class="Body">首先，仅当JoinType = jtRound和/或EndType = etRound时，此字段/属性才相关。</p>
+  <p class="Body"><br> 
+  Since flattened paths can never perfectly represent arcs, this field/property specifies a maximum acceptable imprecision ('tolerance') when arcs are approximated in an offsetting operation. Smaller values will increase 'smoothness' up to a point though at a cost of performance and in creating more vertices to construct the arc.<br>
+  </p>
+  <p class="Body">由于平坦路径永远不能完美地表示弧，所以当在偏移操作中近似弧时，该场/属性指定最大可接受的不精确度（&ldquo;公差&rdquo;）。较小的值将增加&ldquo;平滑度&rdquo;直到一点，虽然以性能为代价和创建更多的顶点来构建弧。</p>
+  <p class="Body"><br> 
+  The default ArcTolerance is 0.25 units. This means that the maximum distance the flattened path will deviate from the 'true' arc will be no more than 0.25 units (before rounding).<br>
+  </p>
+  <p class="Body"><br>
+  默认ArcTolerance为0.25个单位。这意味着扁平路径将偏离&ldquo;真&rdquo;弧的最大距离将不大于0.25个单位（舍入之前）。</p>
+  <p class="Body"><br> 
+  <span class="maroon">Reducing tolerances below 0.25 will <b>not</b> improve smoothness since vertex coordinates will still be rounded to integer values.</span> The only way to achieve sub-integer precision is through coordinate scaling before and after offsetting (see example below).<br>
+  </p>
+  <p class="Body">将公差减小到0.25以下<strong>不会</strong>改善平滑度，因为顶点坐标仍将被舍入为整数值。实现子整数精度的唯一方法是通过在偏移之前和之后的坐标缩放（参见下面的示例）。</p>
+  <p class="Body"><br> 
+  <span class="maroon">It's important to make ArcTolerance a sensible fraction of the offset delta (arc radius)</span>. Large tolerances relative to the offset delta will produce poor arc approximations but, just as importantly, very small tolerances will substantially slow offsetting performance while providing unnecessary degrees of precision. This is most likely to be an issue when offsetting polygons whose coordinates have been scaled to preserve floating point precision.<br>
+  </p>
+  <p class="Body">重要的是使ArcTolerance是偏移增量（圆弧半径）的一个明显的分数。相对于偏移增量的大公差将产生不良的电弧近似，但同样重要的是，非常小的公差将基本上减慢偏移性能，同时提供不必要的精度。当偏移其坐标已缩放的多边形以保留浮点精度时，这最有可能是一个问题。</p>
+  <p class="Body"><br> 
+  <b>Example:</b> Imagine a set of polygons (defined in floating point coordinates) that is to be offset by 10 units using <em>round</em> joins, and the solution is to retain floating point precision up to at least 6 decimal places.<br> To preserve this degree of floating point precision, and given that Clipper and ClipperOffset both operate on integer coordinates, the polygon coordinates will be scaled up by 10<sup>8
     </sup> (and rounded to integers) prior to offsetting. Both offset delta and ArcTolerance will also need to be scaled by this same factor. <em>If ArcTolerance was left unscaled at the default 0.25 units, every arc in the solution would contain a fraction of 44 THOUSAND vertices</em> while the final arc imprecision would be 0.25 &times; 10<sup>-8
     </sup> units (ie once scaling was reversed). However, if 0.1 units was an acceptable imprecision in the final <em>unscaled</em> solution, then ArcTolerance should be set to 0.1 &times; scaling_factor (0.1 &times; 10<sup>8
-    </sup>). Now if scaling is applied equally to both ArcTolerance and to Delta Offset, then in this example the number of vertices (steps) defining each arc would be a fraction of 23.<br><br> The <a href="../../../../../../offset_triginometry2.svg">formula</a> for the number of steps in a full circular arc is ... Pi / acos(1 - arc_tolerance / abs(delta)) </p>
+    </sup>). Now if scaling is applied equally to both ArcTolerance and to Delta Offset, then in this example the number of vertices (steps) defining each arc would be a fraction of 23.<br>
+  </p>
+  <p class="Body"><strong>示例：</strong>设想一组多边形（以浮点坐标定义），使用<em>圆形</em>连接将其偏移10个单位，并且解决方案是保持浮点精度高达至少6个小数位。<br>
+  为了保持这种程度的浮点精度，并且Clipper和ClipperOffset都对整数坐标进行操作，在偏移之前，多边形坐标将被放大10 8 （并舍入为整数）。偏移增量和ArcTolerance也将需要通过相同的因子进行缩放。<em>如果ArcTolerance在默认0.25单位处未缩放，则解中的每个弧将包含44个THOUSAND顶点的分数，</em>而最终弧不精确度将为0.25×10 -8 单位（即，一旦缩放被反转）。然而，如果0.1单位是最终非标定溶液中可接受的不精确<em>度</em>，那么ArcTolerance应该设置为0.1×scaling_factor（0.1×10 8 ）。现在，如果缩放同样应用于ArcTolerance和Delta偏移，则在此示例中，定义每个弧的顶点数（步长）将是23 </p>
+  <p class="Body"><br> 
+  The <a href="../../../../../../offset_triginometry2.svg">formula</a> for the number of steps in a full circular arc is ... Pi / acos(1 - arc_tolerance / abs(delta)) </p>
+  <p class="Body">&nbsp;</p>
+  <p class="Body">的分数。完整圆弧的步数的<a href="../../../../../../offset_triginometry2.svg">公式</a>为： Pi / acos（1-arc_tolerance / abs（delta））</p>
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../../../../../../offset_triginometry2.svg">offset_triginometry2</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../../../../../offset_triginometry2.svg">offset_triginometry2</a> ，<a href="../../../../../../offset_triginometry2_ZH.svg">offset_triginometry（中文）</a></p>
     
-  <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
+<p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   
 </body>
 

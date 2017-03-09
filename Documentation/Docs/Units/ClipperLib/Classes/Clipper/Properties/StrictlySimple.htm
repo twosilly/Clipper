@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,7 +50,7 @@
       </td>
     </tr>
   </table>
-  <h1>Clipper.StrictlySimple</h1>
+  <h1>Clipper.StrictlySimple（完全简单）</h1>
 
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>property</b> StrictlySimple: boolean; <b>override</b>;</p>
@@ -71,15 +71,40 @@
 
     </ul> </p>
 
-  <p class="Body"> Vertices 'touch' if they share the same coordinates (and are not adjacent). An edge touches another if one of its end vertices touches another edge excluding its adjacent edges, or if they are co-linear and overlapping (including adjacent edges).<br><br> Polygons returned by clipping operations (see <a href="../Methods/Execute.htm">Clipper.Execute()</a>) should always be simple polygons. When the <b>StrictlySimply</b> property is enabled, polygons returned will be <em>strictly simple</em>, otherwise they may be <em>weakly simple</em>. It's <b>computationally expensive</b> ensuring polygons are <em>strictly simple</em> and so this property is disabled by default.<br><br> <em>Note: There's currently no guarantee that polygons will be strictly simple since 'simplifying' is still a work in progress.</em><br><br> <img src="../../../../../../Images/simplify2.png" alt="" border="0"> <img src="../../../../../../Images/simplify3.png" alt="" border="0"><br> </p>
+  <blockquote>
+    <p><strong>术语：</strong><br>
+      </p>
+      <ul>
+        <li>一个<em>简单的</em>多边形是一个不self-intersect（自相交）。</li>
+        <li>一个<em>弱简单的</em>多边形是包含'touching（接触）'顶点或'touching（接触）'的边缘一个简单的多边形。</li>
+        <li>一个<em>严格简单的</em>多边形是一个简单的多边形不包含'touching（接触）'顶点或'touching（接触）'的边缘。</li>
+      </ul>
+</blockquote>
+<p>&nbsp;</p>
+<p class="Body"> Vertices 'touch' if they share the same coordinates (and are not adjacent). An edge touches another if one of its end vertices touches another edge excluding its adjacent edges, or if they are co-linear and overlapping (including adjacent edges).<br></p>
+<p class="Body">顶点&ldquo;，如果他们共享相同的坐标（并且不相邻）。如果一个边缘的端点之一接触除了其相邻边缘之外的另一个边缘，或者如果它们是共线性的和重叠的（包括相邻边缘），则边缘接触另一个边缘。</p>
+<p class="Body"><br> 
+  Polygons returned by clipping operations (see <a href="../Methods/Execute.htm">Clipper.Execute()</a>) should always be simple polygons. When the <b>StrictlySimply</b> property is enabled, polygons returned will be <em>strictly simple</em>, otherwise they may be <em>weakly simple</em>. It's <b>computationally expensive</b> ensuring polygons are <em>strictly simple</em> and so this property is disabled by default.<br>
+</p>
+<p class="Body">通过剪切操作返回的多边形（请参阅<a href="../Methods/Execute.htm">Clipper.Execute（）</a>）应始终是简单的多边形。当启用<strong>StrictlySimply</strong>属性时，返回的多边形将<em>严格简单</em>，否则它们可能会变得很<em>简单</em>。它的<strong>计算昂贵</strong>确保多边形是<em>严格简单的</em>，因此默认情况下禁用此属性。</p>
+<p class="Body"><br> 
+<em>Note: There's currently no guarantee that polygons will be strictly simple since 'simplifying' is still a work in progress.</em></p>
+<p class="Body">&nbsp;</p>
+<p class="Body">注：目前还没有保证多边形将严格简单，因为&quot;简化&quot;仍然是一个正在进行中的工作。<br>
+  <br> <img src="../../../../../../Images/simplify2.png" alt="" border="0"> <img src="../../../../../../Images/simplify3.png" alt="" border="0"><br> 
+</p>
 
 
-  <p class="Body"> In the image above, the two examples show weakly simple polygons being broken into two strictly simple polygons. (The outlines with arrows are intended to aid visualizing vertex order.)<br><br> See also the article on <a href="http://en.wikipedia.org/wiki/Simple_polygon" target="_blank">Simple Polygons</a> on Wikipedia. </p>
+<p class="Body"> In the image above, the two examples show weakly simple polygons being broken into two strictly simple polygons. (The outlines with arrows are intended to aid visualizing vertex order.)<br><br> See also the article on <a href="http://en.wikipedia.org/wiki/Simple_polygon" target="_blank">Simple Polygons</a> on Wikipedia. </p>
+<p class="Body">&nbsp;</p>
+<p class="Body">在上图中，两个例子显示了弱简单的多边形被分成两个严格简单的多边形。（带箭头的轮廓旨在帮助可视化顶点顺序。）<br>
+  <br>
+另见维基百科上的<a href="http://en.wikipedia.org/wiki/Simple_polygon" target="_blank">简单多边形</a>文章。</p>
 
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../Methods/Execute.htm">Execute</a>, <a href="../../../Functions/SimplifyPolygons.htm">SimplifyPolygons</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../Methods/Execute.htm">Execute（执行）</a>, <a href="../../../Functions/SimplifyPolygons.htm">SimplifyPolygons（简单化多边形链表）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,7 +50,7 @@
       </td>
     </tr>
   </table>
-  <h1>Clipper.PreserveCollinear</h1>
+  <h1>Clipper.PreserveCollinear（保留线性）</h1>
 
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>property</b> PreserveCollinear: boolean; <b>override</b>;</p>
@@ -61,11 +61,13 @@
 
 
   <p class="Body"> <br> By default, when three or more vertices are collinear in input polygons (subject or clip), the Clipper object removes the 'inner' vertices before clipping. When enabled the PreserveCollinear property prevents this default behavior to allow these inner vertices to appear in the solution. </p>
+  <p class="Body">默认情况下，当三个或多个顶点在输入多边形（主题或剪辑）中共线时，Clipper对象会在剪裁之前删除&ldquo;内部&rdquo;顶点。启用时，PreserveCollinear属性会阻止此默认行为允许这些内部顶点出现在解决方案中。</p>
+  <p class="Body">&nbsp;</p>
 
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../Methods/Constructor.htm">Constructor</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../Methods/Constructor.htm">Constructo（构造器）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

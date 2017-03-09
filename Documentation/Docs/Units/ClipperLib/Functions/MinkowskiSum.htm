@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../Scripts/jquery.js">
   </script>
     
@@ -68,31 +68,40 @@
   <p class="Body"> <b>Minkowski Addition</b> is performed by <em>adding</em> each point in a polygon 'pattern' to the set of points in an open or closed path. The resulting polygon (or polygons) defines the region that the 'pattern' would pass over in moving from the beginning to the end of the 'path'. </p>
 
 
+  <p class="Body">
+  <p class="Body"><b>Minkowski Addition</b> <strong>（增加）</strong>通过执行<em>添加</em>在多边形'pattrn(模式)'的点集的每个点在开放或封闭的路径。结果多边形（或多边形链表）定义&ldquo;'pattrn(模式）&rdquo;在从&ldquo;path（路径）&rdquo;的开始到结束移动时将经过的区域。      
   <p class="Body"> <img src="../../../../Images/minkowski.png" alt="" border="0" align="right"> 
-    <pre class="brush: csharp;">
+<pre class="brush: csharp;">
       Path path = new Path();
       Path pattern = new Path();
       Paths solution = new Paths();
 
       //Greek capital sigma (sum sign) ... 
+      //
       Int64[] ints1 = new Int64[] { 300, 400, 100, 400, 200, 300, 100, 200, 300, 200 };
       path = IntsToPolygon(ints1);
 
       //diagonal brush pattern ...
+      //对角线; 斜线; 斜列 刷 模式
       Int64[] ints2 = new Int64[] { 4, -6, 6, -6, -4, 6, -6, 6 };
       pattern = IntsToPolygon(ints2);
 
       solution = Clipper.MinkowskiSum(pattern, path, false);
-      //move 'pattern' to the end of 'path' ...
+      
+     //move 'pattern' to the end of 'path' ...
+     //将&quot;模式&quot;移到&quot;路径&quot;的末端…
+      
       pattern = TranslatePath(pattern, 300, 200);
 
       //Display solution &plusmn; pattern ...
-    </pre> </p>
+      //显示; 陈列 解决&plusmn;模式。。。
+    </pre> 
+</p>
       
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="MinkowskiDiff.htm">MinkowskiDiff</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="MinkowskiDiff.htm">MinkowskiDiff（Minkowski的差异）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

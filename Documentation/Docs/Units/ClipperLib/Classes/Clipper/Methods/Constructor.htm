@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,7 +50,7 @@
       </td>
     </tr>
   </table>
-  <h1>Clipper.Constructor</h1>
+  <h1>Clipper.Constructor（构造器）</h1>
 
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>constructor</b> TClipper.Create(InitOptions: <a href="../../../Types/InitOptions.htm">TInitOptions</a> = []);</p>
@@ -59,14 +59,18 @@
 
   <p class="Decl3"><span class="Comment">C#&nbsp;&nbsp;&raquo;</span> <b>public</b> Clipper(initOptions = 0): base() {};</p>
 
-  <p class="Body"> The Clipper constructor creates an instance of the Clipper class. One or more <a href="../../../Types/InitOptions.htm">InitOptions</a> may be passed as a parameter to set the corresponding properties. (These properties can still be set or reset after construction.)<br><br> Examples:<br><br> 
-    <table cellspacing="0" cellpadding="0" border="0" align="left" style="margin: 0;" width="600px">
+  <p class="Body"> The Clipper constructor creates an instance of the Clipper class. One or more <a href="../../../Types/InitOptions.htm">InitOptions</a> may be passed as a parameter to set the corresponding properties. (These properties can still be set or reset after construction.)  
+  <p class="Body">Clipper构造函数创建Clipper类的实例。一个或多个<a href="../../../Types/InitOptions.htm">InitOptions（初始化选择）</a>可以作为参数传递以设置相应的属性。（这些属性仍然可以设置或构建后重置。）<br>
+    <br> 
+    Examples（示例）:<br><br> 
+  <table cellspacing="0" cellpadding="0" border="0" align="left" style="margin: 0;" width="600px">
   
-      <tr>
+<tr>
         <td class="White">
   
           <pre class="brush: delphi;">
   //C++ constructor setting StrictlySimple and PreserveCollinear properties ...
+  //C++ 构造函数设置StrictlySimple（完全简单）和PreserveCollinear（保持线性）属性
   Clipper clipper(ioStrictlySimple | ioPreserveCollinear);
 
   //C# constructor setting StrictlySimple and PreserveCollinear properties ...
@@ -76,7 +80,7 @@
   clipper := TClipper.Create([ioStrictlySimple, ioPreserveCollinear]);
           </pre>
   
-        </td>
+      </td>
       </tr>
   
     </table> <div style="clear:both">&nbsp;</div> </p>
@@ -85,8 +89,8 @@
 
   
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../Properties/PreserveCollinear.htm">PreserveCollinear</a>, <a href="../Properties/ReverseSolution.htm">ReverseSolution</a>, <a href="../Properties/StrictlySimple.htm">StrictlySimple</a>, <a href="../../../Types/InitOptions.htm">InitOptions</a></p>
+  <h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../Properties/PreserveCollinear.htm">PreserveCollinear（保持线性）</a>, <a href="../Properties/ReverseSolution.htm">ReverseSolution（方向解）</a>, <a href="../Properties/StrictlySimple.htm">StrictlySimple（完全简单）</a>, <a href="../../../Types/InitOptions.htm">InitOptions（初始化选择）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

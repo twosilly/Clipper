@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../Scripts/jquery.js">
   </script>
     
@@ -48,22 +48,29 @@
       </td>
     </tr>
   </table>
-  <h1>PointInPolygon</h1>
+  <h1>PointInPolygon（点在多边形的位置）</h1>
 
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>function</b> PointInPolygon(<b>const</b> Pt: <a href="../Types/IntPoint.htm">TIntPoint</a>; <b>const</b> poly: <a href="../Types/Path.htm">TPath</a>): Integer;</p>
 
   <p class="Decl2"><span class="Comment">C++&nbsp;&raquo;</span> <b>int</b> PointInPolygon(<b>const</b> <a href="../Types/IntPoint.htm">IntPoint</a> pt, <b>const</b> <a href="../Types/Path.htm">Path</a> &amp;poly); <span class="Comment">// Function in the ClipperLib namespace.</span></p>
+  <p class="Decl2">//ClipperLib命名空间中的函数。</p>
 
-  <p class="Decl3"><span class="Comment">C#&nbsp;&nbsp;&raquo;</span> <b>public static int</b> PointInPolygon(<a href="../Types/IntPoint.htm">IntPoint</a> pt, <a href="../Types/Path.htm">Path</a> poly); <span class="Comment">// Static method of the Clipper class.</span></p>
+<p class="Decl3"><span class="Comment">C#&nbsp;&nbsp;&raquo;</span> <b>public static int</b> PointInPolygon(<a href="../Types/IntPoint.htm">IntPoint</a> pt, <a href="../Types/Path.htm">Path</a> poly); <span class="Comment">// Static method of the Clipper class.</span></p>
 
 
   <p class="Body">Returns 0 when false, -1 when pt is <b>on</b> poly and +1 when pt is <b>in</b> poly.<br><br> It's assumed that 'poly' is closed and does not self-intersect. </p>
 
-<br>
-
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../Types/IntPoint.htm">IntPoint</a>, <a href="../Types/Path.htm">Path</a></p>
+<p>&nbsp;</p>
+<blockquote>
+  <p>返回0时假，当-1 时点在多边形上，+1时在多边形内！<br>
+    <br>
+    假设&ldquo;poly&rdquo;是闭合的，并且不自相交。<br>
+    
+  </p>
+</blockquote>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../Types/IntPoint.htm">IntPoint</a>, <a href="../Types/Path.htm">Path（路径）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

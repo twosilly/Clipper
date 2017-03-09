@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,20 +50,27 @@
       </td>
     </tr>
   </table>
-  <h1>PolyNode.IsHole</h1>
+  <h1>PolyNode.IsHole（是不是孔）</h1>
 
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> IsHole: Boolean; <span class="Comment">//read only</span></p>
 
-  <p class="Decl2"><span class="Comment"> C++&nbsp;&raquo;</span> bool IsHole; <span class="Comment">//field</span></p>
+  <p class="Decl2"><span class="Comment"> C++&nbsp;&raquo;</span> bool IsHole; <span class="Comment">//field</span>（邻域）</p>
 
   <p class="Decl3"><span class="Comment"> C#&nbsp;&nbsp;&raquo;</span> <b>public <span class="CSharp">bool</span></b> IsHole; <span class="Comment">//read only property</span></p>
 
 
-  <p class="Body"> Returns true when the PolyNode's polygon (<a href="./Contour.htm">Contour</a>) is a <a href="../../../../../Overview/_Body.htm#terminology">hole</a>.<br><br> Children of <em>outer</em> polygons are always <em>holes</em>, and children of <em>holes</em> are always (nested) <em>outer</em> polygons.<br> The IsHole property of a <a href="../../PolyTree/_Body.htm">PolyTree</a> object is undefined but its children are always top-level <em>outer</em> polygons. </p>
+  <p class="Body"> Returns true when the PolyNode's polygon (<a href="./Contour.htm">Contour</a>) is a <a href="../../../../../Overview/_Body.htm#terminology">hole</a>.<br>
+  </p>
+  <p class="Body">当多边形节点的多边形（<a href="./Contour.htm">Contour“轮廓”</a>）是一个<a href="../../../../../Overview/_Body.htm#terminology">hole（孔）</a>时返回true 。</p>
+  <p class="Body"><br> 
+  Children of <em>outer</em> polygons are always <em>holes</em>, and children of <em>holes</em> are always (nested) <em>outer</em> polygons.<br> The IsHole property of a <a href="../../PolyTree/_Body.htm">PolyTree</a> object is undefined but its children are always top-level <em>outer</em> polygons. </p>
+  <p class="Body">孩子<em>外</em>多边形总是<em>孔</em>，和孩子<em>孔</em>总是（嵌套）<em>外</em>多边形。<a href="../../PolyTree/_Body.htm">PolyTree</a>对象<br>
+  的IsHole属性未定义，但其子代始终是顶级<em>外部</em>多边形。</p>
+  <p class="Body">&nbsp;</p>
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../../../../../Overview/_Body.htm">Overview</a>, <a href="Contour.htm">Contour</a>, <a href="../../PolyTree/_Body.htm">PolyTree</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../../../../Overview/_Body.htm">Overview（概观）</a>, <a href="Contour.htm">Contour（轮廓）</a>, <a href="../../PolyTree/_Body.htm">PolyTree（多边形树）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,7 +50,7 @@
       </td>
     </tr>
   </table>
-  <h1>PolyTree.GetFirst</h1>
+  <h1>PolyTree.GetFirst（得到上一个）</h1>
 
 
   <p class="Decl"><span class="Comment"> Del.&raquo; </span><b>function</b> GetFirst: TPolyNode;</p>
@@ -60,15 +60,21 @@
   <p class="Decl3"><span class="Comment"> C#&nbsp;&nbsp;&raquo;</span> <b>public <span class="CSharp">PolyNode</span></b> GetFirst();</p>
 
 
-  <p class="Body"> This method returns the first outer polygon contour if any, otherwise a null pointer.<br><br> This function is almost equivalent to calling Childs[0] except that when a PolyTree object is empty (has no children), calling Childs[0] would raise an out of range exception. </p>
+  <p class="Body"> This method returns the first outer polygon contour if any, otherwise a null pointer.<br>
+  </p>
+  <p class="Body">此方法返回第一个外部多边形轮廓（如果有），否则返回空指针。</p>
+  <p class="Body"><br> 
+  This function is almost equivalent to calling Childs[0] except that when a PolyTree object is empty (has no children), calling Childs[0] would raise an out of range exception. </p>
+  <p class="Body">&nbsp;</p>
+  <p class="Body">这个函数几乎等效于调用Childs [0]，除了当PolyTree对象为空（没有孩子）时，调用Childs [0]将引发一个超出范围的异常。</p>
 
  
  
  
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../../PolyNode/Methods/GetNext.htm">PolyNode.GetNext</a>, <a href="../../PolyNode/Properties/ChildCount.htm">PolyNode.ChildCount</a>, <a href="../../PolyNode/Properties/Childs.htm">PolyNode.Childs</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../PolyNode/Methods/GetNext.htm">PolyNode.GetNext（得到下一个）</a>, <a href="../../PolyNode/Properties/ChildCount.htm">PolyNode.ChildCount（子类的数量）</a>, <a href="../../PolyNode/Properties/Childs.htm">PolyNode.Childs（子类列表）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

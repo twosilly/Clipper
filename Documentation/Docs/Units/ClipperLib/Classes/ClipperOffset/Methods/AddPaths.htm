@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../../../Scripts/jquery.js">
   </script>
     
@@ -50,7 +50,7 @@
       </td>
     </tr>
   </table>
-  <h1>ClipperOffset.AddPaths</h1>
+  <h1>ClipperOffset.AddPaths（Clipper偏移.添加路径列表）</h1>
 
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>procedure</b> AddPaths(<b>const</b> Paths: TPaths; JoinType: TJoinType; EndType: TEndType);</p>
@@ -61,11 +61,17 @@
 <br>
 
 
-  <p class="Body"> Adds <a href="../../../Types/Paths.htm"><b>Paths</b></a> to a ClipperOffset object in preparation for offsetting.<br><br> Any number of paths can be added, and each path has its own <a href="../../../Types/JoinType.htm">JoinType</a> and <a href="../../../Types/EndType.htm">EndType</a>. All 'outer' Paths must have the same orientation, and any 'hole' paths must have reverse orientation. <em>Closed</em> paths must have at least 3 vertices. <em>Open</em> paths may have as few as one vertex. Open paths can only be offset with positive deltas.<br><br> </p>
+  <p class="Body"> Adds <a href="../../../Types/Paths.htm"><b>Paths</b></a> to a ClipperOffset object in preparation for offsetting.<br></p>
+  <p class="Body">将<a href="../../../Types/Paths.htm"><strong>路径</strong></a>添加到ClipperOffset对象以准备偏移。</p>
+  <p class="Body"><br> 
+  Any number of paths can be added, and each path has its own <a href="../../../Types/JoinType.htm">JoinType</a> and <a href="../../../Types/EndType.htm">EndType</a>. All 'outer' Paths must have the same orientation, and any 'hole' paths must have reverse orientation. <em>Closed</em> paths must have at least 3 vertices. <em>Open</em> paths may have as few as one vertex. Open paths can only be offset with positive deltas.<br>
+  </p>
+  <p class="Body">可以添加任何数量的路径，每个路径都有自己的<a href="../../../Types/JoinType.htm">JoinType</a>和<a href="../../../Types/EndType.htm">EndType</a>。所有&ldquo;outer（外）&rdquo;路径必须具有相同的方向，并且任何&ldquo;hole（孔）&rdquo;路径必须具有相反的方向。<em>封闭</em>路径必须至少有3个顶点。<em>打开</em>路径可以具有少至一个顶点。打开路径只能用正增量偏移。<br> 
+  </p>
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../../../Types/EndType.htm">EndType</a>, <a href="../../../Types/JoinType.htm">JoinType</a>, <a href="../../../Types/Paths.htm">Paths</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../../../Types/EndType.htm">EndType（终端，结束类型）</a>, <a href="../../../Types/JoinType.htm">JoinType（链接类型）</a>, <a href="../../../Types/Paths.htm">Paths（路径链表）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   

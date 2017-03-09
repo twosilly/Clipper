@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    
+    <meta charset="utf-8">
   <script type="text/javascript" src="../../../../Scripts/jquery.js">
   </script>
     
@@ -48,7 +48,7 @@
       </td>
     </tr>
   </table>
-  <h1>SimplifyPolygon</h1>
+  <h1>SimplifyPolygon（简单化多边形）</h1>
 
 
   <p class="Decl"><span class="Comment">Del.&raquo;</span> <b>function</b> SimplifyPolygon(<b>const</b> Poly: TPath; FillType: TPolyFillType = pftEvenOdd): TPaths;</p>
@@ -59,14 +59,23 @@
 <br>
 
 
-  <p class="Body"> Removes self-intersections from the supplied polygon (by performing a boolean <em>union</em> operation using the nominated <a href="../Types/PolyFillType.htm">PolyFillType</a>).<br> Polygons with non-contiguous duplicate vertices (ie 'touching') will be split into two polygons.<br><br> <em>Note: There's currently no guarantee that polygons will be strictly simple since 'simplifying' is still a work in progress.</em><br><br> <img src="../../../../Images/simplify.png" alt="" border="0"><br> <img src="../../../../Images/simplify2.png" alt="" border="0"> <img src="../../../../Images/simplify3.png" alt="" border="0"> </p>
+  <p class="Body"> Removes self-intersections from the supplied polygon (by performing a boolean <em>union</em> operation using the nominated <a href="../Types/PolyFillType.htm">PolyFillType</a>).<br> Polygons with non-contiguous duplicate vertices (ie 'touching') will be split into two polygons.<br>
+  </p>
+  <p class="Body">从提供的多边形中删除自交集（通过使用指定的PolyFillType 执行布尔联合运算）。<br>
+    具有不连续的重复顶点（即&quot;'ouching(触摸)&quot;）的多边形将被分成两个多边形。<br>
+  </p>
+  <p class="Body"><br> 
+    <em>Note: There's currently no guarantee that polygons will be strictly simple since 'simplifying' is still a work in progress.</em></p>
+  <p class="Body">&nbsp;</p>
+  <p class="Body"><em>注意：目前不能保证多边形将严格简单，因为'简化'仍然是一个正在进行中的工作。</em><br>
+    <br> <img src="../../../../Images/simplify.png" alt="" border="0"><br> <img src="../../../../Images/simplify2.png" alt="" border="0"> <img src="../../../../Images/simplify3.png" alt="" border="0"> </p>
 
 
 
 
 
-  <h2 id="Auto-SeeAlso">See Also</h2>
-  <p class="Body"><a href="../Classes/Clipper/Properties/StrictlySimple.htm">Clipper.StrictlySimple</a>, <a href="CleanPolygon.htm">CleanPolygon</a>, <a href="../Types/Path.htm">Path</a>, <a href="../Types/PolyFillType.htm">PolyFillType</a></p>
+<h2 id="Auto-SeeAlso">请查阅</h2>
+  <p class="Body"><a href="../Classes/Clipper/Properties/StrictlySimple.htm">Clipper.StrictlySimple（完全简单）</a>, <a href="CleanPolygon.htm">CleanPolygon（清楚多边形“即优化”）</a>, <a href="../Types/Path.htm">Path（路径）</a>, <a href="../Types/PolyFillType.htm">PolyFillType（多边形的填充类型）</a></p>
     
   <p class="Copyright" id="auto"> <br><br> Copyright &copy;2010-2014 Angus Johnson&nbsp; - &nbsp; Clipper 6.2.1 &nbsp; - &nbsp; Help file built on 1-November-2014 <br><br> </p>
   
